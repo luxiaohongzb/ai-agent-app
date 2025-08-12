@@ -1,4 +1,4 @@
-package cn.bugstack.ai.domain.agent.model.valobj;
+package com.mingliu.domain.agent.model.valobj;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

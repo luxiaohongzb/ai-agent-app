@@ -1,6 +1,6 @@
-package cn.bugstack.ai.domain.agent.model.valobj.enums;
+package com.mingliu.domain.agent.model.valobj.enums;
 
-import cn.bugstack.ai.domain.agent.model.valobj.AiClientAdvisorVO;
+import com.mingliu.domain.agent.model.valobj.AiClientAdvisorVO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +9,7 @@ import org.springframework.ai.chat.client.advisor.api.Advisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.VectorStore;
-import cn.bugstack.ai.domain.agent.service.armory.factory.element.RagAnswerAdvisor;
+import com.mingliu.domain.agent.service.armory.factory.element.RagAnswerAdvisor;
 
 import java.util.HashMap;
 import java.util.Map;

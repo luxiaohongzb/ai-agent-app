@@ -1,5 +1,7 @@
 server:
   port: 8091
+  servlet:
+    context-path: /ai-agent-station
 
 # 线程池配置
 thread:
@@ -16,24 +18,52 @@ thread:
 spring:
   datasource:
     username: root
-    password: 123456
-    url: jdbc:mysql://127.0.0.1:3306/xfg_frame_archetype?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC&useSSL=true
+    password: Vae20000608!
+    url: jdbc:mysql://106.54.0.156:13306/ai-agent-station?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
-  hikari:
-    pool-name: Retail_HikariCP
-    minimum-idle: 15 #最小空闲连接数量
-    idle-timeout: 180000 #空闲连接存活最大时间，默认600000（10分钟）
-    maximum-pool-size: 25 #连接池最大连接数，默认是10
-    auto-commit: true  #此属性控制从池返回的连接的默认自动提交行为,默认值：true
-    max-lifetime: 1800000 #此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
-    connection-timeout: 30000 #数据库连接超时时间,默认30秒，即30000
-    connection-test-query: SELECT 1
-  type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      pool-name: Retail_HikariCP
+      minimum-idle: 5 #最小空闲连接数量
+      idle-timeout: 180000 #空闲连接存活最大时间，默认600000（10分钟）
+      maximum-pool-size: 10 #连接池最大连接数，默认是10
+      auto-commit: true  #此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      max-lifetime: 1800000 #此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      connection-timeout: 30000 #数据库连接超时时间,默认30秒，即30000
+#  main:
+#    allow-bean-definition-overriding: true
+  ai:
+#    mcp:
+#        client:
+#          request-timeout: 180
+#          sse:
+#            connections:
+#              server1:
+#                url: http://localhost:8101
+#              server2:
+#                url: http://localhost:8102
 
-# MyBatis 配置【如需使用记得打开】
-#mybatis:
-#  mapper-locations: classpath:/mybatis/mapper/*.xml
-#  config-location:  classpath:/mybatis/config/mybatis-config.xml
+    #        stdio:
+    #          servers-configuration: classpath:/mcp-servers-config-2.json
+    # 个人配置，通过 http://127.0.0.1:8090 代理出去
+    vectorstore:
+      pgvector:
+        datasource:
+          driver-class-name: org.postgresql.Driver
+          username: postgres
+          password: postgres
+          url: jdbc:postgresql://106.54.0.156:13306/ai-rag-knowledge
+          type: com.zaxxer.hikari.HikariDataSource
+          hikari:
+            maximum-pool-size: 5
+            minimum-idle: 2
+            idle-timeout: 30000
+            connection-timeout: 30000
+    openai:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      api-key: sk-93a0daaeb8e54475bc997b5ff37e331a
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  config-location:  classpath:/mybatis/config/mybatis-config.xml
 
 # 日志
 logging:

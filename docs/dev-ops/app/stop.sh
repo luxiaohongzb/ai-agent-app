@@ -1,1 +1,1 @@
-docker stop ai-agent-app
+docker stop ai-agent-station-study

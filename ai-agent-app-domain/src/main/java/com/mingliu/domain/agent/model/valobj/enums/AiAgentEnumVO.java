@@ -1,4 +1,4 @@
-package cn.bugstack.ai.domain.agent.model.valobj.enums;
+package com.mingliu.domain.agent.model.valobj.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
