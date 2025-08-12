@@ -9,11 +9,15 @@ import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.messages.UserMessage;
+import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.openai.api.OpenAiApi;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 
 @Slf4j
@@ -34,9 +38,20 @@ public class AgentTest {
                 .commandType(AiAgentEnumVO.AI_CLIENT.getCode())
                 .commandIdList(Arrays.asList("3001"))
                 .build(),new DefaultArmoryStrategyFactory.DynamicContext());
-        OpenAiApi openAiApi = (OpenAiApi) applicationContext.getBean(AiAgentEnumVO.AI_CLIENT_API.getBeanName("1001"));
+        ChatClient chatClient = (ChatClient) applicationContext.getBean(AiAgentEnumVO.AI_CLIENT.getBeanName("3001"));
 
-        log.info("测试结果：{}", openAiApi);
+        log.info("客户端构建：{}", chatClient);
+
+        String content = chatClient.
+
+                prompt(Prompt.builder()
+                .messages(new UserMessage(
+                        "有哪些工具可以使用？"))
+                .build()).
+                system(s->s.param("current_date", LocalDate.now().toString()))
+                .call().content();
+
+        log.info("测试结果(call):{}", content);
 
     }
 
