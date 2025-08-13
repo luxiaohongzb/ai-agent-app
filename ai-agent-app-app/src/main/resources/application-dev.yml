@@ -13,7 +13,24 @@ thread:
         keep-alive-time: 5000
         block-queue-size: 5000
         policy: CallerRunsPolicy
+# Swagger配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.mingliu.trigger.http
 
+# knife4j配置
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
 # 数据库配置；启动时配置数据库资源信息
 spring:
   datasource:

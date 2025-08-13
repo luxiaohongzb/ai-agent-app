@@ -10,6 +10,19 @@
     <artifactId>ai-agent-app-trigger</artifactId>
 
     <dependencies>
+    <!-- Swagger3 -->
+    <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>2.2.0</version>
+    </dependency>
+
+    <!-- Knife4j -->
+    <dependency>
+        <groupId>com.github.xiaoymin</groupId>
+        <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+        <version>4.3.0</version>
+    </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -18,6 +31,7 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
@@ -34,11 +48,11 @@
         </dependency>
         <dependency>
             <groupId>com.mingliu</groupId>
-            <artifactId>ai-agent-app-types</artifactId>
+            <artifactId>ai-agent-app-domain</artifactId>
         </dependency>
         <dependency>
             <groupId>com.mingliu</groupId>
-            <artifactId>ai-agent-app-domain</artifactId>
+            <artifactId>ai-agent-app-infrastructure</artifactId>
         </dependency>
     </dependencies>
 
