@@ -4,8 +4,10 @@ package com.mingliu.test;
 import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
 import com.alibaba.fastjson.JSON;
 import com.mingliu.domain.agent.model.entity.ArmoryCommandEntity;
+import com.mingliu.domain.agent.model.entity.ExecuteCommandEntity;
 import com.mingliu.domain.agent.model.valobj.enums.AiAgentEnumVO;
 import com.mingliu.domain.agent.service.armory.factory.DefaultArmoryStrategyFactory;
+import com.mingliu.domain.agent.service.execute.auto.step.factory.DefaultAutoAgentExecuteStrategyFactory;
 import io.modelcontextprotocol.client.McpClient;
 import io.modelcontextprotocol.client.McpSyncClient;
 import io.modelcontextprotocol.client.transport.HttpClientSseClientTransport;
@@ -39,6 +41,8 @@ public class AgentTest {
     private DefaultArmoryStrategyFactory defaultArmoryStrategyFactory;
 
     @Resource
+    DefaultAutoAgentExecuteStrategyFactory defaultAutoAgentExecuteStrategyFactory;
+    @Resource
     private ApplicationContext applicationContext;
 //
 //    @Value("classpath:data/dog.png")
@@ -51,27 +55,40 @@ public class AgentTest {
         StrategyHandler<ArmoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext, String> strategiedHandler = defaultArmoryStrategyFactory.strategyHandler();
         strategiedHandler.apply(ArmoryCommandEntity.builder()
                 .commandType(AiAgentEnumVO.AI_CLIENT.getCode())
-                .commandIdList(Arrays.asList("3101"))
+                .commandIdList(Arrays.asList("3101", "3102", "3103","3104"))
                 .build(),new DefaultArmoryStrategyFactory.DynamicContext());
-        ChatClient chatClient = (ChatClient) applicationContext.getBean(AiAgentEnumVO.AI_CLIENT.getBeanName("3001"));
+        ChatClient chatClient = (ChatClient) applicationContext.getBean(AiAgentEnumVO.AI_CLIENT.getBeanName("3101"));
 
         log.info("客户端构建：{}", chatClient);
     }
+    @Test
+    public void autoAgent() throws Exception {
+        StrategyHandler<ExecuteCommandEntity, DefaultAutoAgentExecuteStrategyFactory.DynamicContext, String> executeHandler
+                = defaultAutoAgentExecuteStrategyFactory.armoryStrategyHandler();
 
+        ExecuteCommandEntity executeCommandEntity = new ExecuteCommandEntity();
+        executeCommandEntity.setAiAgentId("3");
+        executeCommandEntity.setMessage("搜索小傅哥，技术项目列表。编写成一份文档，说明不同项目的学习目标，以及不同阶段的伙伴应该学习哪个项目。");
+        executeCommandEntity.setSessionId("session-id-" + System.currentTimeMillis());
+        executeCommandEntity.setMaxStep(3);
+
+        String apply = executeHandler.apply(executeCommandEntity, new DefaultAutoAgentExecuteStrategyFactory.DynamicContext());
+        log.info("测试结果:{}", apply);
+    }
     @Test
     public void testAiClientApiNode() throws Exception {
 
 
-        String content = chatClient.
-
-                prompt(Prompt.builder()
-                .messages(new UserMessage(
-                        "搜索xfg博客"))
-                .build()).
-                system(s->s.param("current_date", LocalDate.now().toString()))
-                .call().content();
-
-        log.info("测试结果(call):{}", content);
+//        String content = chatClient.
+//
+//                prompt(Prompt.builder()
+//                .messages(new UserMessage(
+//                        "搜索xfg博客"))
+//                .build()).
+//                system(s->s.param("current_date", LocalDate.now().toString()))
+//                .call().content();
+//
+//        log.info("测试结果(call):{}", content);
 
     }
         @Test

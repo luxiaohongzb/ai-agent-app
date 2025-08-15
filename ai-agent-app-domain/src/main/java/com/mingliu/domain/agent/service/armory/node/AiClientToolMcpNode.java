@@ -43,6 +43,7 @@ public class AiClientToolMcpNode extends AbstractArmorySupport {
             log.warn("没有需要被初始化的 ai client tool mcp");
             return  router(requestParameter,dynamicContext);
         }
+        log.info("Ai Agent 构建节点，Tool MCP 工具配置{}", JSON.toJSONString(aiClientToolMcpVOS));
         for(AiClientToolMcpVO aiClientToolMcpVO:aiClientToolMcpVOS){
             McpSyncClient mcpSyncClient = createMcpSyncClient(aiClientToolMcpVO);
             registerBean(beanName(aiClientToolMcpVO.getMcpId()),McpSyncClient.class,mcpSyncClient);

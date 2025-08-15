@@ -3,7 +3,7 @@ package com.mingliu.domain.agent.service.execute.auto.step.factory;
 import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
 import com.mingliu.domain.agent.model.entity.ExecuteCommandEntity;
 import com.mingliu.domain.agent.model.valobj.AiAgentClientFlowConfigVO;
-import com.mingliu.domain.agent.service.execute.auto.step.RootNode;
+import com.mingliu.domain.agent.service.execute.auto.step.ExecuteRootNode;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,9 +24,9 @@ import java.util.Map;
 @Component
 public class DefaultAutoAgentExecuteStrategyFactory {
 
-    private final RootNode executeRootNode;
+    private final ExecuteRootNode executeRootNode;
 
-    public DefaultAutoAgentExecuteStrategyFactory(RootNode executeRootNode) {
+    public DefaultAutoAgentExecuteStrategyFactory(ExecuteRootNode executeRootNode) {
         this.executeRootNode = executeRootNode;
     }
 

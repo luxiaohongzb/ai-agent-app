@@ -8,7 +8,12 @@ package com.mingliu.config;
  * @description:
  */
 
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
+
+import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.zaxxer.hikari.HikariDataSource;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.ai.openai.OpenAiEmbeddingModel;
 import org.springframework.ai.openai.api.OpenAiApi;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
@@ -22,13 +27,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.beans.factory.annotation.Value;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.SqlSessionTemplate;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
 
 @Configuration
+@MapperScan("com.mingliu.infrastructure.dao")
 public class AiAgentConfig {
 
     /**
@@ -61,29 +64,13 @@ public class AiAgentConfig {
     }
 
     /**
-     * 配置 MyBatis 的 SqlSessionFactory
+     * 配置 MyBatis Plus 分页插件
      */
-    @Bean("sqlSessionFactory")
-    public SqlSessionFactoryBean sqlSessionFactory(@Qualifier("mybatisDataSource") DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(dataSource);
-
-        // 设置MyBatis配置文件位置
-        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sqlSessionFactoryBean.setConfigLocation(resolver.getResource("classpath:/mybatis/config/mybatis-config.xml"));
-
-        // 设置Mapper XML文件位置
-        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mybatis/mapper/*.xml"));
-
-        return sqlSessionFactoryBean;
-    }
-
-    /**
-     * 配置 SqlSessionTemplate
-     */
-    @Bean("sqlSessionTemplate")
-    public SqlSessionTemplate sqlSessionTemplate(@Qualifier("sqlSessionFactory") SqlSessionFactoryBean sqlSessionFactory) throws Exception {
-        return new SqlSessionTemplate(sqlSessionFactory.getObject());
+    @Bean
+    public MybatisPlusInterceptor mybatisPlusInterceptor() {
+        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+        return interceptor;
     }
 
     /**

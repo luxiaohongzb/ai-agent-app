@@ -1,130 +1,158 @@
 package com.mingliu.trigger.http.admin;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.mingliu.infrastructure.dao.IAiRagOrderDao;
-import com.mingliu.infrastructure.dao.po.AiRagOrder;
-import com.mingliu.trigger.http.dto.BaseQueryRequest;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+
+
+import com.mingliu.infrastructure.dao.IAiClientRagOrderDao;
+import com.mingliu.infrastructure.dao.po.AiClientRagOrder;
 import com.mingliu.trigger.http.dto.PageResponse;
-import com.mingliu.trigger.http.dto.RagOrderQueryRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.mingliu.trigger.http.dto.BaseQueryRequest;
 import java.util.List;
 
 /**
- * RAG顺序管理服务
- *
- * @author Fuzhengwei bugstack.cn @小傅哥
- * 2025-05-06 16:46
+ * @Title: AiAdminRagOrderController
+ * @Author mingliu0608
+ * @Package com.mingliu.trigger.http.admin
+ * @Date 2025/8/15 23:49
+ * @description: RAG订单管理服务
  */
-@Tag(name = "RAG顺序管理", description = "RAG顺序相关接口")
+
 @Slf4j
 @RestController()
 @CrossOrigin("*")
 @RequestMapping("/api/v1/ai/admin/rag/")
+@Tag(name = "RAG订单管理", description = "提供RAG订单的增删改查接口")
 public class AiAdminRagOrderController {
 
     @Resource
-    private IAiRagOrderDao aiRagOrderDao;
+    private IAiClientRagOrderDao aiRagOrderDao;
 
-    @Operation(summary = "查询RAG顺序列表", description = "分页查询RAG顺序列表")
-    @RequestMapping(value = "queryRagOrderList", method = RequestMethod.POST)
-    public ResponseEntity<PageResponse<AiRagOrder>> queryRagOrderList(
-            @Parameter(description = "查询条件和分页参数", required = true) @RequestBody RagOrderQueryRequest request) {
+    /**
+     * 分页查询RAG订单列表
+     *
+     * @param request 查询条件
+     * @return 分页结果
+     */
+    @Operation(summary = "查询RAG订单列表", description = "分页查询所有RAG订单信息")
+    @PostMapping("queryRagOrderList")
+    public ResponseEntity<PageResponse<AiClientRagOrder>> queryRagOrderList(@Parameter(description = "查询条件") @RequestBody BaseQueryRequest request) {
         try {
-            // 设置分页参数
-            if (StringUtils.hasText(request.getOrderBy())) {
-                PageHelper.startPage(request.getPageNum(), request.getPageSize(), request.getOrderBy());
-            } else {
-                PageHelper.startPage(request.getPageNum(), request.getPageSize());
+            Page<AiClientRagOrder> page = new Page<>(request.getPageNum(), request.getPageSize());
+            LambdaQueryWrapper<AiClientRagOrder> wrapper = new LambdaQueryWrapper<>();
+            if (request.getId() != null) {
+                wrapper.eq(AiClientRagOrder::getId, request.getId());
             }
-            
-            // 执行查询
-            AiRagOrder queryCondition = request.toAiRagOrder();
-            List<AiRagOrder> ragOrderList = aiRagOrderDao.queryRagOrderList(queryCondition);
-            
-            // 包装分页结果
-            PageInfo<AiRagOrder> pageInfo = new PageInfo<>(ragOrderList);
-            PageResponse<AiRagOrder> pageResponse = PageResponse.of(pageInfo);
-            
-            return ResponseEntity.ok(pageResponse);
+            if (request.getStatus() != null) {
+                wrapper.eq(AiClientRagOrder::getStatus, request.getStatus());
+            }
+            if (request.getCreateTimeStart() != null) {
+                wrapper.ge(AiClientRagOrder::getCreateTime, request.getCreateTimeStart());
+            }
+            if (request.getCreateTimeEnd() != null) {
+                wrapper.le(AiClientRagOrder::getCreateTime, request.getCreateTimeEnd());
+            }
+            IPage<AiClientRagOrder> aiClientRagOrderPage = aiRagOrderDao.selectPage(page, wrapper);
+            return ResponseEntity.ok(PageResponse.of(aiClientRagOrderPage));
         } catch (Exception e) {
-            log.error("查询RAG顺序列表异常", e);
+            log.error("查询RAG订单列表异常", e);
             return ResponseEntity.status(500).build();
         }
     }
 
-    @Operation(summary = "查询所有有效RAG顺序", description = "获取所有有效的RAG顺序列表")
     @RequestMapping(value = "queryAllValidRagOrder", method = RequestMethod.POST)
-    public ResponseEntity<List<AiRagOrder>> queryAllValidRagOrder() {
+    public ResponseEntity<List<AiClientRagOrder>> queryAllValidRagOrder() {
         try {
-            List<AiRagOrder> ragOrderList = aiRagOrderDao.queryAllValidRagOrder();
+            List<AiClientRagOrder> ragOrderList = aiRagOrderDao.selectList(new LambdaQueryWrapper<AiClientRagOrder>().eq(AiClientRagOrder::getStatus,1));
             return ResponseEntity.ok(ragOrderList);
         } catch (Exception e) {
-            log.error("查询RAG顺序列表异常", e);
+            log.error("查询RAG订单列表异常", e);
             return ResponseEntity.status(500).build();
         }
     }
 
-    @Operation(summary = "根据ID查询RAG顺序", description = "根据RAG顺序ID查询详细信息")
-    @RequestMapping(value = "queryRagOrderById", method = RequestMethod.GET)
-    public ResponseEntity<AiRagOrder> queryRagOrderById(
-            @Parameter(description = "RAG顺序ID", required = true) @RequestParam("id") Long id) {
+    /**
+     * 根据ID查询RAG订单
+     *
+     * @param id RAG订单ID
+     * @return RAG订单
+     */
+    @Operation(summary = "根据ID查询RAG订单", description = "获取指定ID的RAG订单详细信息")
+    @GetMapping("queryRagOrderById")
+    public ResponseEntity<AiClientRagOrder> queryRagOrderById(@Parameter(description = "订单ID") @RequestParam("id") Long id) {
         try {
-            AiRagOrder ragOrder = aiRagOrderDao.queryRagOrderById(id);
+            AiClientRagOrder ragOrder = aiRagOrderDao.selectById(id);
             return ResponseEntity.ok(ragOrder);
         } catch (Exception e) {
-            log.error("查询RAG顺序异常", e);
+            log.error("查询RAG订单异常", e);
             return ResponseEntity.status(500).build();
         }
     }
 
-    @Operation(summary = "新增RAG顺序", description = "添加新的RAG顺序")
-    @RequestMapping(value = "addRagOrder", method = RequestMethod.POST)
-    public ResponseEntity<Boolean> addRagOrder(
-            @Parameter(description = "RAG顺序信息", required = true) @RequestBody AiRagOrder aiRagOrder) {
+    /**
+     * 新增RAG订单
+     *
+     * @param aiRagOrder RAG订单
+     * @return 结果
+     */
+    @Operation(summary = "新增RAG订单", description = "创建新的RAG订单")
+    @PostMapping("addRagOrder")
+    public ResponseEntity<Boolean> addRagOrder(@Parameter(description = "订单信息") @RequestBody AiClientRagOrder aiRagOrder) {
         try {
-            aiRagOrder.setCreateTime(new Date());
-            aiRagOrder.setUpdateTime(new Date());
+            aiRagOrder.setCreateTime(LocalDateTime.now());
+            aiRagOrder.setUpdateTime(LocalDateTime.now());
             int count = aiRagOrderDao.insert(aiRagOrder);
             return ResponseEntity.ok(count > 0);
         } catch (Exception e) {
-            log.error("新增RAG顺序异常", e);
+            log.error("新增RAG订单异常", e);
             return ResponseEntity.status(500).build();
         }
     }
 
-    @Operation(summary = "更新RAG顺序", description = "更新现有RAG顺序信息")
-    @RequestMapping(value = "updateRagOrder", method = RequestMethod.POST)
-    public ResponseEntity<Boolean> updateRagOrder(
-            @Parameter(description = "RAG顺序信息", required = true) @RequestBody AiRagOrder aiRagOrder) {
+    /**
+     * 更新RAG订单
+     *
+     * @param aiRagOrder RAG订单
+     * @return 结果
+     */
+    @Operation(summary = "更新RAG订单", description = "更新现有RAG订单的信息")
+    @PostMapping("updateRagOrder")
+    public ResponseEntity<Boolean> updateRagOrder(@Parameter(description = "订单信息") @RequestBody AiClientRagOrder aiRagOrder) {
         try {
-            aiRagOrder.setUpdateTime(new Date());
-            int count = aiRagOrderDao.update(aiRagOrder);
+            aiRagOrder.setUpdateTime(LocalDateTime.now());
+            int count = aiRagOrderDao.updateById(aiRagOrder);
             return ResponseEntity.ok(count > 0);
         } catch (Exception e) {
-            log.error("更新RAG顺序异常", e);
+            log.error("更新RAG订单异常", e);
             return ResponseEntity.status(500).build();
         }
     }
 
-    @Operation(summary = "删除RAG顺序", description = "根据ID删除RAG顺序")
-    @RequestMapping(value = "deleteRagOrder", method = RequestMethod.GET)
-    public ResponseEntity<Boolean> deleteRagOrder(
-            @Parameter(description = "RAG顺序ID", required = true) @RequestParam("id") Long id) {
+    /**
+     * 删除RAG订单
+     *
+     * @param id RAG订单ID
+     * @return 结果
+     */
+    @Operation(summary = "删除RAG订单", description = "删除指定ID的RAG订单")
+    @GetMapping("deleteRagOrder")
+    public ResponseEntity<Boolean> deleteRagOrder(@Parameter(description = "订单ID") @RequestParam("id") Long id) {
         try {
             int count = aiRagOrderDao.deleteById(id);
             return ResponseEntity.ok(count > 0);
         } catch (Exception e) {
-            log.error("删除RAG顺序异常", e);
+            log.error("删除RAG订单异常", e);
             return ResponseEntity.status(500).build();
         }
     }

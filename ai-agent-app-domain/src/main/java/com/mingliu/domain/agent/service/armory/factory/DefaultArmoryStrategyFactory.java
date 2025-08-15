@@ -3,7 +3,7 @@ package com.mingliu.domain.agent.service.armory.factory;
 import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
 
 import com.mingliu.domain.agent.model.entity.ArmoryCommandEntity;
-import com.mingliu.domain.agent.service.armory.node.RootNode;
+import com.mingliu.domain.agent.service.armory.node.ArmoryRootNode;
 import jakarta.annotation.Resource;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatModel;
@@ -24,8 +24,8 @@ import java.util.Map;
 public class DefaultArmoryStrategyFactory {
     @Resource
     private ApplicationContext applicationContext;
-    private final RootNode rootNode;
-    public DefaultArmoryStrategyFactory(RootNode rootNode) {
+    private final ArmoryRootNode rootNode;
+    public DefaultArmoryStrategyFactory(ArmoryRootNode rootNode) {
         this.rootNode = rootNode;
     }
     public StrategyHandler<ArmoryCommandEntity, DynamicContext, String> strategyHandler() {

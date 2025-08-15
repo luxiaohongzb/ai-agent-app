@@ -79,6 +79,7 @@
         <dependency>
             <groupId>com.mingliu</groupId>
             <artifactId>ai-agent-app-types</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>

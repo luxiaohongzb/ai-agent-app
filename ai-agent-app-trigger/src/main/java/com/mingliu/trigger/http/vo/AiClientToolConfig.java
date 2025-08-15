@@ -1,19 +1,22 @@
-package com.mingliu.infrastructure.dao.po;
+package com.mingliu.trigger.http.vo;
 
+import groovy.transform.EqualsAndHashCode;
+import lombok.Data;
 
-import lombok.*;
-
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
- * 客户端-工具关联表
+ * @Title: AiClientToolConfig
+ * @Author mingliu0608
+ * @Package com.mingliu.trigger.http.vo
+ * @Date 2025/8/15 23:32
+ * @description: 客户端-工具关联表
  */
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class AiClientToolConfig {
 
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class AiClientToolConfig {
     /**
      * 主键ID
      */
@@ -37,5 +40,5 @@ public class AiClientToolConfig {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
 }

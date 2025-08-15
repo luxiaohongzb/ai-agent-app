@@ -4,7 +4,6 @@ import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
 import com.mingliu.domain.agent.model.entity.ExecuteCommandEntity;
 import com.mingliu.domain.agent.model.valobj.AiAgentClientFlowConfigVO;
 import com.mingliu.domain.agent.service.execute.auto.step.factory.DefaultAutoAgentExecuteStrategyFactory;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -20,8 +19,7 @@ import java.util.Map;
 
 
 @Service
-
-public class RootNode extends AbstractExecuteSupport{
+public class ExecuteRootNode extends AbstractExecuteSupport{
     @Resource
     private Step1AnalyzerNode step1AnalyzerNode;
     @Override

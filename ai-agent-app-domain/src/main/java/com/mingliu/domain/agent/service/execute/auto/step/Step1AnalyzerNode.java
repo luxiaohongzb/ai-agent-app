@@ -56,7 +56,7 @@ public class Step1AnalyzerNode extends AbstractExecuteSupport{
             return router(executeCommandEntity, dynamicContext);
         }
 
-        return null;
+        return router(executeCommandEntity, dynamicContext);
     }
 
     @Override
