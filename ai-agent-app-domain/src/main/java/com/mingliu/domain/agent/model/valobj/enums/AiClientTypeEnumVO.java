@@ -1,11 +1,11 @@
-package cn.bugstack.ai.domain.agent.model.valobj.enums;
+package com.mingliu.domain.agent.model.valobj.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /**
- * @author xiaofuge bugstack.cn @小傅哥
+ * @author mingliu
  * 2025/7/27 17:25
  */
 @Getter

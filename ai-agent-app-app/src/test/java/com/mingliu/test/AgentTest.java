@@ -2,21 +2,31 @@ package com.mingliu.test;
 
 
 import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
+import com.alibaba.fastjson.JSON;
 import com.mingliu.domain.agent.model.entity.ArmoryCommandEntity;
 import com.mingliu.domain.agent.model.valobj.enums.AiAgentEnumVO;
 import com.mingliu.domain.agent.service.armory.factory.DefaultArmoryStrategyFactory;
+import io.modelcontextprotocol.client.McpClient;
+import io.modelcontextprotocol.client.McpSyncClient;
+import io.modelcontextprotocol.client.transport.HttpClientSseClientTransport;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.UserMessage;
+import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.openai.api.OpenAiApi;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.MimeType;
+import org.springframework.util.MimeTypeUtils;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Arrays;
 
@@ -30,23 +40,33 @@ public class AgentTest {
 
     @Resource
     private ApplicationContext applicationContext;
+//
+//    @Value("classpath:data/dog.png")
+//    private org.springframework.core.io.ResourceimageResource im;
 
-    @Test
-    public void testAiClientApiNode() throws Exception {
+
+    private ChatClient chatClient;
+    @Before
+    public void init() throws Exception {
         StrategyHandler<ArmoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext, String> strategiedHandler = defaultArmoryStrategyFactory.strategyHandler();
         strategiedHandler.apply(ArmoryCommandEntity.builder()
                 .commandType(AiAgentEnumVO.AI_CLIENT.getCode())
-                .commandIdList(Arrays.asList("3001"))
+                .commandIdList(Arrays.asList("3101"))
                 .build(),new DefaultArmoryStrategyFactory.DynamicContext());
         ChatClient chatClient = (ChatClient) applicationContext.getBean(AiAgentEnumVO.AI_CLIENT.getBeanName("3001"));
 
         log.info("客户端构建：{}", chatClient);
+    }
+
+    @Test
+    public void testAiClientApiNode() throws Exception {
+
 
         String content = chatClient.
 
                 prompt(Prompt.builder()
                 .messages(new UserMessage(
-                        "有哪些工具可以使用？"))
+                        "搜索xfg博客"))
                 .build()).
                 system(s->s.param("current_date", LocalDate.now().toString()))
                 .call().content();
@@ -54,5 +74,26 @@ public class AgentTest {
         log.info("测试结果(call):{}", content);
 
     }
+        @Test
+        public void test() {
+            McpSyncClient mcpSyncClient = sseMcpClient();
 
+//            String res = chatClient.prompt(Prompt.builder().messages(new UserMessage("搜索小傅哥技术博客有哪些项目")).build()).call().content();
+//            log.info("测试结果:{}", res);
+        }
+
+ 
+        public McpSyncClient sseMcpClient() {
+            HttpClientSseClientTransport sseClientTransport = HttpClientSseClientTransport.builder("http://appbuilder.baidu.com/v2/ai_search/mcp/")
+                    .sseEndpoint("sse?api_key=Bearer+bce-v3/ALTAK-JIu2dvdMXs03ndtiR5rCf/79d75ceb505278e8d074b3a34eddfd88e9029ad8")
+                    .build();
+
+            McpSyncClient mcpSyncClient = McpClient.sync(sseClientTransport).requestTimeout(Duration.ofMinutes(360)).build();
+            var init_sse = mcpSyncClient.initialize();
+            log.info("Tool SSE MCP Initialized {}", init_sse);
+
+            return mcpSyncClient;
+
+
+        }
 }
