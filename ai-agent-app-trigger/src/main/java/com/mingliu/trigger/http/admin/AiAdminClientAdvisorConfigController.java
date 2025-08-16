@@ -39,7 +39,7 @@ public class AiAdminClientAdvisorConfigController {
     /**
      * 分页查询客户端顾问配置列表
      *
-     * @param aiClientAdvisorConfig 查询条件
+     * @param request 查询条件
      * @return 分页结果
      */
     @Operation(summary = "查询客户端顾问配置列表", description = "分页查询所有客户端顾问配置信息")
