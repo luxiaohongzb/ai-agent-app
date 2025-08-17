@@ -27,4 +27,17 @@ public interface IAgentRepository {
 
     Map<String, AiAgentClientFlowConfigVO> queryAiAgentClientFlowConfig(String aiAgentId);
 
+    List<AiAgentTaskScheduleVO> queryAllValidTaskSchedule();
+
+    List<Long> queryAllInvalidTaskScheduleIds();
+
+    void createTagOrder(AiRagOrderVO aiRagOrderVO);
+
+    List<String> queryAiClientIds();
+
+    String queryRagKnowledgeTag(String ragId);
+
+    String queryAiClientModelIdByAgentId(String aiAgentId);
+
+    List<String> queryAiClientIdsByAiAgentId(String aiAgentId);
 }

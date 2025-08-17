@@ -3,6 +3,7 @@ package com.mingliu.domain.agent.service.armory.factory;
 import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
 
 import com.mingliu.domain.agent.model.entity.ArmoryCommandEntity;
+import com.mingliu.domain.agent.model.valobj.enums.AiAgentEnumVO;
 import com.mingliu.domain.agent.service.armory.node.ArmoryRootNode;
 import jakarta.annotation.Resource;
 import org.springframework.ai.chat.client.ChatClient;
@@ -32,12 +33,12 @@ public class DefaultArmoryStrategyFactory {
         return rootNode;
     }
 
-    public ChatClient chatClient(Long clientId) {
-        return (ChatClient) applicationContext.getBean("ChatClient_" + clientId);
+    public ChatClient chatClient(String clientId) {
+        return (ChatClient) applicationContext.getBean(AiAgentEnumVO.AI_CLIENT.getBeanNameTag()+ clientId);
     }
 
-    public ChatModel chatModel(Long modelId) {
-        return (ChatModel) applicationContext.getBean("AiClientModel_" + modelId);
+    public ChatModel chatModel(String modelId) {
+        return (ChatModel) applicationContext.getBean(AiAgentEnumVO.AI_CLIENT_MODEL.getBeanNameTag() + modelId);
     }
 
     public static class DynamicContext{

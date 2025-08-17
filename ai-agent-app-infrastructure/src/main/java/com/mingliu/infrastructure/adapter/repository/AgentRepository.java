@@ -3,6 +3,7 @@ package com.mingliu.infrastructure.adapter.repository;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mingliu.domain.agent.adapter.repository.IAgentRepository;
 import com.mingliu.domain.agent.model.valobj.*;
@@ -13,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -28,6 +30,9 @@ import static com.mingliu.domain.agent.model.valobj.enums.AiAgentEnumVO.*;
 @Repository
 public class AgentRepository implements IAgentRepository {
 
+
+    @Resource
+    IAiClientRagOrderDao ragOrderDao;
     @Resource
     private IAiAgentDao aiAgentDao;
 
@@ -60,6 +65,8 @@ public class AgentRepository implements IAgentRepository {
 
     @Resource
     private IAiClientToolMcpDao aiClientToolMcpDao;
+
+
 
     @Override
     public List<AiClientApiVO> queryAiClientApiVOListByClientIds(List<String> clientIdList) {
@@ -536,4 +543,66 @@ public class AgentRepository implements IAgentRepository {
             return Map.of();
         }
     }
+
+    @Override
+    public List<AiAgentTaskScheduleVO> queryAllValidTaskSchedule() {
+        List<AiAgentTaskSchedule> aiAgentTaskSchedules = aiAgentTaskScheduleDao.selectList(new LambdaQueryWrapper<AiAgentTaskSchedule>().eq(AiAgentTaskSchedule::getStatus, 1));
+        List<AiAgentTaskScheduleVO> vos = new ArrayList<>();
+        for(AiAgentTaskSchedule aiAgentTaskSchedule:aiAgentTaskSchedules){
+            AiAgentTaskScheduleVO vo = new AiAgentTaskScheduleVO();
+            vo.setAgentId(aiAgentTaskSchedule.getAgentId());
+            vo.setDescription(aiAgentTaskSchedule.getDescription());
+            vo.setTaskParam(aiAgentTaskSchedule.getTaskParam());
+            vo.setCronExpression(aiAgentTaskSchedule.getCronExpression());
+        }
+        return vos;
+    }
+
+    @Override
+    public List<Long> queryAllInvalidTaskScheduleIds() {
+        return aiAgentTaskScheduleDao.selectList(null)
+                .stream()
+                .map(AiAgentTaskSchedule::getId)
+                .toList();
+    }
+
+    @Override
+    public void createTagOrder(AiRagOrderVO aiRagOrderVO) {
+        AiClientRagOrder aiClientRagOrder = new AiClientRagOrder();
+        aiClientRagOrder.setRagName(aiRagOrderVO.getRagName());
+        aiClientRagOrder.setKnowledgeTag(aiRagOrderVO.getKnowledgeTag());
+        aiClientRagOrder.setCreateTime(LocalDateTime.now());
+        aiClientRagOrder.setUpdateTime(LocalDateTime.now());
+        aiClientRagOrderDao.insert(aiClientRagOrder);
+    }
+
+    @Override
+    public List<String> queryAiClientIds() {
+        return aiClientDao.selectList(null).stream().map(AiClient::getClientId).toList();
+    }
+
+    @Override
+    public String queryRagKnowledgeTag(String ragId) {
+
+        return ragOrderDao.selectById(ragId).getKnowledgeTag();
+    }
+
+    @Override
+    public String queryAiClientModelIdByAgentId(String aiAgentId) {
+        AiClientConfig client = aiClientConfigDao.selectOne(new LambdaQueryWrapper<AiClientConfig>()
+                .eq(AiClientConfig::getSourceType, "client")
+                .eq(AiClientConfig::getSourceId,aiAgentId)
+                .eq(AiClientConfig::getTargetType,"model"));
+
+        return client.getTargetId();
+    }
+
+    @Override
+    public List<String> queryAiClientIdsByAiAgentId(String aiAgentId) {
+         return aiAgentFlowConfigDao.selectList(new LambdaQueryWrapper<AiAgentFlowConfig>()
+                .eq(AiAgentFlowConfig::getAgentId,aiAgentId)
+        ).stream().map(AiAgentFlowConfig::getClientId).toList();
+    }
+
+
 }

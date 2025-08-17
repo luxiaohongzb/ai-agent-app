@@ -47,7 +47,7 @@ public class AiAdminModelController {
     /**
      * 分页查询客户端模型配置列表
      *
-     * @param request 查询条件
+     * @param AiClientModel 查询条件
      * @return 分页结果
      */
     @Operation(summary = "查询客户端模型配置列表", description = "分页查询所有客户端模型配置信息")

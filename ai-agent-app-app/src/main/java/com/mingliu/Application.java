@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.CommandLineRunner;
+
+import java.util.Arrays;
+
 @SpringBootApplication
 @Configurable
 @Slf4j
@@ -21,7 +24,7 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("预热AiAgent服务，开始");
-        aiAgentArmoryService.preheat();
+        aiAgentArmoryService.preheat(Arrays.asList("3001","3101","3102","3103","3104"));
         log.info("预热AiAgent服务，完成");
     }
 }
