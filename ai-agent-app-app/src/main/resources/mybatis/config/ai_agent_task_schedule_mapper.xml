@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mingliu.infrastructure.dao.IAiAgentTaskScheduleDao">
+
+    <resultMap id="taskScheduleMap" type="com.mingliu.infrastructure.dao.po.AiAgentTaskSchedule">
+        <id column="id" property="id"/>
+        <result column="agent_id" property="agentId"/>
+        <result column="task_name" property="taskName"/>
+        <result column="description" property="description"/>
+        <result column="cron_expression" property="cronExpression"/>
+        <result column="task_param" property="taskParam"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+    
+    <!-- 根据条件查询任务调度列表 -->
+    <select id="queryTaskScheduleList" parameterType="com.mingliu.infrastructure.dao.po.AiAgentTaskSchedule" resultMap="taskScheduleMap">
+        SELECT 
+            id, agent_id, task_name, description, cron_expression, task_param, status, create_time, update_time
+        FROM 
+            ai_agent_task_schedule
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="agentId != null">
+                AND agent_id = #{agentId}
+            </if>
+            <if test="taskName != null and taskName != ''">
+                AND task_name LIKE CONCAT('%', #{taskName}, '%')
+            </if>
+            <if test="status != null">
+                AND status = #{status}
+            </if>
+        </where>
+        ORDER BY create_time DESC
+    </select>
+    
+    <!-- 根据ID查询任务调度 -->
+    <select id="queryTaskScheduleById" parameterType="java.lang.Long" resultMap="taskScheduleMap">
+        SELECT 
+            id, agent_id, task_name, description, cron_expression, task_param, status, create_time, update_time
+        FROM 
+            ai_agent_task_schedule
+        WHERE 
+            id = #{id}
+    </select>
+    
+</mapper>

@@ -1,0 +1,102 @@
+25-08-15.21:13:07.244 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 48036 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-15.21:13:07.246 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-15.21:13:09.542 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-15.21:13:09.562 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-15.21:13:09.564 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-15.21:13:09.564 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-15.21:13:09.717 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-15.21:13:09.718 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2165 ms
+25-08-15.21:13:11.283 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-15.21:13:11.291 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-15.21:13:11.291 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-15.21:13:11.781 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-15.21:13:12.542 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-15.21:13:12.555 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-15.21:13:12.569 [main            ] INFO  Application            - Started Application in 6.088 seconds (process running for 7.236)
+25-08-15.21:13:12.573 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-15.21:13:12.573 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-15.21:15:01.659 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-15.21:15:02.230 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-15.21:15:12.496 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 16052 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-15.21:15:12.498 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-15.21:15:14.955 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-15.21:15:14.978 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-15.21:15:14.982 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-15.21:15:14.982 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-15.21:15:15.142 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-15.21:15:15.142 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2324 ms
+25-08-15.21:15:16.527 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-15.21:15:16.533 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-15.21:15:16.533 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-15.21:15:16.950 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-15.21:15:17.632 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-15.21:15:17.645 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-15.21:15:17.660 [main            ] INFO  Application            - Started Application in 5.916 seconds (process running for 6.92)
+25-08-15.21:15:17.663 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-15.21:15:17.663 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-15.21:16:02.871 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-15.21:16:02.871 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-15.21:16:02.872 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-08-15.21:16:04.988 [http-nio-8091-exec-8] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 351 ms
+25-08-15.21:18:18.831 [http-nio-8091-exec-9] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-15.21:18:19.578 [http-nio-8091-exec-9] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@5aab655d
+25-08-15.21:18:19.580 [http-nio-8091-exec-9] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-15.21:19:17.076 [http-nio-8091-exec-10] WARN  DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Long is not present]
+25-08-15.21:36:46.156 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-15.21:36:46.940 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-15.21:36:46.950 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-15.21:36:56.957 [SpringApplicationShutdownHook] WARN  HikariPool             - Timed-out waiting for close connection executor to shutdown
+25-08-15.21:36:56.957 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-15.21:37:09.778 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 25212 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-15.21:37:09.780 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-15.21:37:12.764 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-15.21:37:12.784 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-15.21:37:12.786 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-15.21:37:12.787 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-15.21:37:12.954 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-15.21:37:12.954 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2813 ms
+25-08-15.21:37:14.461 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-15.21:37:14.467 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-15.21:37:14.467 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-15.21:37:14.873 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-15.21:37:15.526 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-15.21:37:15.540 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-15.21:37:15.555 [main            ] INFO  Application            - Started Application in 6.673 seconds (process running for 7.731)
+25-08-15.21:37:15.559 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-15.21:37:15.560 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-15.21:37:23.971 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-15.21:37:23.971 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-15.21:37:23.974 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 3 ms
+25-08-15.21:37:26.917 [http-nio-8091-exec-9] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 483 ms
+25-08-15.21:37:55.196 [http-nio-8091-exec-10] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-15.21:37:55.873 [http-nio-8091-exec-10] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@30f0b6ed
+25-08-15.21:37:55.875 [http-nio-8091-exec-10] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-15.21:43:45.659 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-15.21:43:46.103 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-15.21:43:46.111 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-15.21:43:56.119 [SpringApplicationShutdownHook] WARN  HikariPool             - Timed-out waiting for close connection executor to shutdown
+25-08-15.21:43:56.119 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-15.21:44:04.935 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 4404 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-15.21:44:04.938 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-15.21:44:08.006 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-15.21:44:08.030 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-15.21:44:08.033 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-15.21:44:08.033 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-15.21:44:08.173 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-15.21:44:08.173 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2875 ms
+25-08-15.21:44:09.846 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-15.21:44:09.853 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-15.21:44:09.854 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-15.21:44:10.314 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-15.21:44:10.994 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-15.21:44:11.010 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-15.21:44:11.025 [main            ] INFO  Application            - Started Application in 6.917 seconds (process running for 7.969)
+25-08-15.21:44:11.030 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-15.21:44:11.031 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-15.21:44:11.109 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-15.21:44:11.110 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-15.21:44:11.114 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 4 ms
+25-08-15.21:44:13.047 [http-nio-8091-exec-9] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 407 ms
+25-08-15.21:44:20.028 [http-nio-8091-exec-10] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-15.21:44:20.685 [http-nio-8091-exec-10] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@4dd70588
+25-08-15.21:44:20.687 [http-nio-8091-exec-10] INFO  HikariDataSource       - MainHikariPool - Start completed.
