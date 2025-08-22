@@ -24,7 +24,7 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("预热AiAgent服务，开始");
-        aiAgentArmoryService.preheat(Arrays.asList("3001","3101","3102","3103","3104"));
+        aiAgentArmoryService.preheat(Arrays.asList("3001","3101","3102","3103","3104","3004"));
         log.info("预热AiAgent服务，完成");
     }
 }

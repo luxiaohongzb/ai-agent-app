@@ -12,5 +12,5 @@ import java.util.List;
 public interface IAiAgentRagService {
 
     void storeRagFile(String name, String tag, List<MultipartFile> files);
-
+    void analyzeGitRepository (String repoUrl,  String userName, String token,String branch) throws Exception;
 }

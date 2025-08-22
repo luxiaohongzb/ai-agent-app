@@ -1,6 +1,7 @@
 package com.mingliu.domain.agent.service.chat;
 
 import com.mingliu.domain.agent.adapter.repository.IAgentRepository;
+import com.mingliu.domain.agent.model.valobj.enums.AiAgentEnumVO;
 import com.mingliu.domain.agent.service.IAiAgentChatService;
 import com.mingliu.domain.agent.service.armory.factory.DefaultArmoryStrategyFactory;
 import jakarta.annotation.Resource;
@@ -8,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.Message;
+import org.springframework.ai.chat.messages.SystemMessage;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
@@ -17,6 +19,7 @@ import org.springframework.ai.document.Document;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.pgvector.PgVectorStore;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
@@ -44,7 +47,8 @@ public class AiAgentChatService implements IAiAgentChatService {
 
     @Resource
     private PgVectorStore vectorStore;
-
+    @Resource
+    private ApplicationContext applicationContext;
     @Resource
     private DefaultArmoryStrategyFactory defaultArmoryStrategyFactory;
 
@@ -78,12 +82,16 @@ public class AiAgentChatService implements IAiAgentChatService {
     public Flux<ChatResponse> aiAgentChatStream(String aiAgentId, String ragId, String message) {
         log.info("智能体对话请求，参数 aiAgentId {} message {}", aiAgentId, message);
 
+        if (StringUtils.isBlank(message)) {
+            throw new IllegalArgumentException("消息内容不能为空");
+        }
+
         // 查询模型ID
-        String modelId = repository.queryAiClientModelIdByAgentId(aiAgentId);
-
-        // 获取对话模型
-        ChatModel chatModel = defaultArmoryStrategyFactory.chatModel(modelId);
-
+//        String modelId = repository.queryAiClientModelIdByAgentId(aiAgentId);
+//
+//        // 获取对话模型
+//        ChatModel chatModel = defaultArmoryStrategyFactory.chatModel(modelId);
+        ChatClient chatModel = (ChatClient) applicationContext.getBean(AiAgentEnumVO.AI_CLIENT.getBeanName("3001"));
         // 封装请求参数
         List<Message> messages = new ArrayList<>();
 
@@ -99,23 +107,24 @@ public class AiAgentChatService implements IAiAgentChatService {
 
             List<Document> documents = vectorStore.similaritySearch(searchRequest);
             String documentCollectors = documents.stream().map(Document::getFormattedContent).collect(Collectors.joining());
-            Message ragMessage = new SystemPromptTemplate("""
+            Message ragMessage = SystemPromptTemplate.builder().template("""
                 Use the information from the DOCUMENTS section to provide accurate answers but act as if you knew this information innately.
                 If unsure, simply state that you don't know.
                 Another thing you need to note is that your reply must be in Chinese!
                 DOCUMENTS:
                     {documents}
-                """).createMessage(Map.of("documents", documentCollectors));
-
+                """).build().createMessage(Map.of("documents", documentCollectors));
+            log.info(message);
+            log.info(ragMessage.getText());
             messages.add(new UserMessage(message));
             messages.add(ragMessage);
         } else {
             messages.add(new UserMessage(message));
         }
 
-        return chatModel.stream(Prompt.builder()
+        return chatModel.prompt(Prompt.builder()
                 .messages(messages)
-                .build());
+                .build()).stream().chatResponse();
     }
 
 }

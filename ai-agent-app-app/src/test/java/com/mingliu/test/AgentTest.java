@@ -7,6 +7,7 @@ import com.mingliu.domain.agent.model.entity.ArmoryCommandEntity;
 import com.mingliu.domain.agent.model.entity.ExecuteCommandEntity;
 import com.mingliu.domain.agent.model.valobj.enums.AiAgentEnumVO;
 import com.mingliu.domain.agent.service.armory.factory.DefaultArmoryStrategyFactory;
+import com.mingliu.domain.agent.service.chat.AiAgentChatService;
 import com.mingliu.domain.agent.service.execute.auto.step.factory.DefaultAutoAgentExecuteStrategyFactory;
 import io.modelcontextprotocol.client.McpClient;
 import io.modelcontextprotocol.client.McpSyncClient;
@@ -27,6 +28,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.MimeType;
 import org.springframework.util.MimeTypeUtils;
+import reactor.core.publisher.Flux;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -48,7 +50,8 @@ public class AgentTest {
 //    @Value("classpath:data/dog.png")
 //    private org.springframework.core.io.ResourceimageResource im;
 
-
+    @Resource
+    private AiAgentChatService aiAgentChatService;
     private ChatClient chatClient;
     @Before
     public void init() throws Exception {
@@ -60,6 +63,30 @@ public class AgentTest {
         ChatClient chatClient = (ChatClient) applicationContext.getBean(AiAgentEnumVO.AI_CLIENT.getBeanName("3101"));
 
         log.info("客户端构建：{}", chatClient);
+    }
+
+    @Test
+    public void chatWithRag(){
+        // 获取聊天响应流
+        Flux<ChatResponse> hello = aiAgentChatService.aiAgentChatStream("3101", "276ed187-28d8-43eb-bb51-e2c0026cc8cb", "hello");
+        // 订阅流并处理每个响应
+        hello.subscribe(response -> {
+            // 打印每个响应的内容
+            System.out.println("AI回复: " + response.getResult().getOutput().getText());
+        }, error -> {
+            // 处理错误
+            System.err.println("发生错误: " + error.getMessage());
+            error.printStackTrace();
+        }, () -> {
+            // 流结束时的处理
+            System.out.println("对话结束");
+        });
+        // 等待流处理完成
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     public void autoAgent() throws Exception {
@@ -91,26 +118,26 @@ public class AgentTest {
 //        log.info("测试结果(call):{}", content);
 
     }
-        @Test
-        public void test() {
-            McpSyncClient mcpSyncClient = sseMcpClient();
+    @Test
+    public void test() {
+        McpSyncClient mcpSyncClient = sseMcpClient();
 
 //            String res = chatClient.prompt(Prompt.builder().messages(new UserMessage("搜索小傅哥技术博客有哪些项目")).build()).call().content();
 //            log.info("测试结果:{}", res);
-        }
-
- 
-        public McpSyncClient sseMcpClient() {
-            HttpClientSseClientTransport sseClientTransport = HttpClientSseClientTransport.builder("http://appbuilder.baidu.com/v2/ai_search/mcp/")
-                    .sseEndpoint("sse?api_key=Bearer+bce-v3/ALTAK-JIu2dvdMXs03ndtiR5rCf/79d75ceb505278e8d074b3a34eddfd88e9029ad8")
-                    .build();
-
-            McpSyncClient mcpSyncClient = McpClient.sync(sseClientTransport).requestTimeout(Duration.ofMinutes(360)).build();
-            var init_sse = mcpSyncClient.initialize();
-            log.info("Tool SSE MCP Initialized {}", init_sse);
-
-            return mcpSyncClient;
+    }
 
 
-        }
+    public McpSyncClient sseMcpClient() {
+        HttpClientSseClientTransport sseClientTransport = HttpClientSseClientTransport.builder("http://appbuilder.baidu.com/v2/ai_search/mcp/")
+                .sseEndpoint("sse?api_key=Bearer+bce-v3/ALTAK-JIu2dvdMXs03ndtiR5rCf/79d75ceb505278e8d074b3a34eddfd88e9029ad8")
+                .build();
+
+        McpSyncClient mcpSyncClient = McpClient.sync(sseClientTransport).requestTimeout(Duration.ofMinutes(360)).build();
+        var init_sse = mcpSyncClient.initialize();
+        log.info("Tool SSE MCP Initialized {}", init_sse);
+
+        return mcpSyncClient;
+
+
+    }
 }

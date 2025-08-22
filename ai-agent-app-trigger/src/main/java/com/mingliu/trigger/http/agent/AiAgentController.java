@@ -45,8 +45,6 @@ public class AiAgentController implements IAiAgentService {
     @Resource
     private IAiAgentChatService aiAgentChatService;
 
-    @Resource
-    private IAiAgentRagService aiAgentRagService;
 
     @Resource
     private IAiAgentPreheatService aiAgentPreheatService;
@@ -153,32 +151,21 @@ public class AiAgentController implements IAiAgentService {
     /**
      * curl http://localhost:8091/ai-agent-station/api/v1/ai/agent/chat_stream?modelId=1&ragId=1&message=hi
      */
-//    @RequestMapping(value = "chat_stream", method = RequestMethod.GET)
-//    public Flux<ChatResponse> chatStream(@RequestParam("aiAgentId") String aiAgentId, @RequestParam("ragId") String ragId, @RequestParam("message") String message) {
-//        try {
-//            log.info("AiAgent 智能体对话(stream)，请求 {} {} {}", aiAgentId, ragId, message);
-//            return aiAgentChatService.aiAgentChatStream(aiAgentId, ragId, message);
-//        } catch (Exception e) {
-//            log.error("AiAgent 智能体对话(stream)，失败 {} {} {}", aiAgentId, ragId, message, e);
-//            throw e;
-//        }
-//    }
+    @RequestMapping(value = "chat_stream", method = RequestMethod.GET)
+    public Flux<ChatResponse> chatStream(@RequestParam("aiAgentId") String aiAgentId, @RequestParam(value = "ragId",required = false) String ragId, @RequestParam(value = "message") String message) {
+        try {
+
+            log.info("AiAgent 智能体对话(stream)，请求 {} {} {}", aiAgentId, ragId, message);
+            return aiAgentChatService.aiAgentChatStream(aiAgentId, ragId, message);
+        } catch (Exception e) {
+            log.error("AiAgent 智能体对话(stream)，失败 {} {} {}", aiAgentId, ragId, message, e);
+            throw e;
+        }
+    }
 
     /**
      * http://localhost:8091/ai-agent-station/api/v1/ai/agent/file/upload
      */
-    @RequestMapping(value = "file/upload", method = RequestMethod.POST, headers = "content-type=multipart/form-data")
-    public ResponseEntity<Boolean> uploadRagFile(@RequestParam("name") String name, @RequestParam("tag") String tag, @RequestParam("files") List<MultipartFile> files) {
-        try {
-            log.info("上传知识库，请求 {}", name);
-            aiAgentRagService.storeRagFile(name, tag, files);
-            ResponseEntity<Boolean> response = ResponseEntity.ok(true);
-            log.info("上传知识库，结果 {} {}", name, JSON.toJSONString(response));
-            return response;
-        } catch (Exception e) {
-            log.error("上传知识库，异常 {}", name, e);
-            return ResponseEntity.status(500).build();
-        }
-    }
+
 
 }

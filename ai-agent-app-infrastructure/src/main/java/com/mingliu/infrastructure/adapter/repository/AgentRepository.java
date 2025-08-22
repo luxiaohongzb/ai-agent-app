@@ -569,6 +569,7 @@ public class AgentRepository implements IAgentRepository {
     @Override
     public void createTagOrder(AiRagOrderVO aiRagOrderVO) {
         AiClientRagOrder aiClientRagOrder = new AiClientRagOrder();
+        aiClientRagOrder.setRagId(UUID.randomUUID().toString());
         aiClientRagOrder.setRagName(aiRagOrderVO.getRagName());
         aiClientRagOrder.setKnowledgeTag(aiRagOrderVO.getKnowledgeTag());
         aiClientRagOrder.setCreateTime(LocalDateTime.now());
@@ -584,7 +585,7 @@ public class AgentRepository implements IAgentRepository {
     @Override
     public String queryRagKnowledgeTag(String ragId) {
 
-        return ragOrderDao.selectById(ragId).getKnowledgeTag();
+        return ragOrderDao.selectOne(new LambdaQueryWrapper<AiClientRagOrder>().eq(AiClientRagOrder::getRagId,ragId)).getKnowledgeTag();
     }
 
     @Override

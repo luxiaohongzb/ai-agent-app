@@ -49,15 +49,6 @@ spring:
 #  main:
 #    allow-bean-definition-overriding: true
   ai:
-#    mcp:
-#        client:
-#          request-timeout: 180
-#          sse:
-#            connections:
-#              server1:
-#                url: http://localhost:8101
-#              server2:
-#                url: http://localhost:8102
 
     #        stdio:
     #          servers-configuration: classpath:/mcp-servers-config-2.json
@@ -68,7 +59,7 @@ spring:
           driver-class-name: org.postgresql.Driver
           username: postgres
           password: postgres
-          url: jdbc:postgresql://106.54.0.156:13306/ai-rag-knowledge
+          url: jdbc:postgresql://106.54.0.156:15432/ai-rag-knowledge
           type: com.zaxxer.hikari.HikariDataSource
           hikari:
             maximum-pool-size: 5
@@ -78,6 +69,13 @@ spring:
     openai:
       base-url: https://dashscope.aliyuncs.com/compatible-mode
       api-key: sk-93a0daaeb8e54475bc997b5ff37e331a
+      chat:
+        options:
+          model: qwen-plus
+      embedding-model: text-embedding-v4
+      embedding:
+        options:
+          num-batch: 1536
 # MyBatis Plus配置
 mybatis-plus:
   configuration:

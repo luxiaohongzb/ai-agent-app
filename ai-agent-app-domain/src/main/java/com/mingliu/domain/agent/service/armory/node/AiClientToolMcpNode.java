@@ -48,7 +48,7 @@ public class AiClientToolMcpNode extends AbstractArmorySupport {
             McpSyncClient mcpSyncClient = createMcpSyncClient(aiClientToolMcpVO);
             registerBean(beanName(aiClientToolMcpVO.getMcpId()),McpSyncClient.class,mcpSyncClient);
         }
-        return null;
+        return  router(requestParameter,dynamicContext);
     }
 
 

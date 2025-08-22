@@ -14,8 +14,12 @@ import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.zaxxer.hikari.HikariDataSource;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.ai.document.MetadataMode;
+import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.ai.openai.OpenAiEmbeddingModel;
+import org.springframework.ai.openai.OpenAiEmbeddingOptions;
 import org.springframework.ai.openai.api.OpenAiApi;
+import org.springframework.ai.retry.RetryUtils;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.ai.vectorstore.VectorStore;
@@ -135,7 +139,15 @@ public class AiAgentConfig {
                 .apiKey(apiKey)
                 .build();
 
-        OpenAiEmbeddingModel embeddingModel = new OpenAiEmbeddingModel(openAiApi);
+        OpenAiEmbeddingModel embeddingModel = new OpenAiEmbeddingModel(openAiApi,
+
+                MetadataMode.EMBED,
+                OpenAiEmbeddingOptions.builder()
+                        .model("text-embedding-v4")
+                        .dimensions(1536)
+                        .build(),
+                RetryUtils.DEFAULT_RETRY_TEMPLATE
+        );
         return PgVectorStore.builder(jdbcTemplate, embeddingModel)
                 .vectorTableName("vector_store_openai")
                 .build();

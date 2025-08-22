@@ -9,6 +9,8 @@ import com.mingliu.infrastructure.dao.IAiClientDao;
 import com.mingliu.infrastructure.dao.po.AiAgent;
 import com.mingliu.infrastructure.dao.po.AiAgentFlowConfig;
 import com.mingliu.infrastructure.dao.po.AiClient;
+import com.mingliu.infrastructure.dao.IAiClientConfigDao;
+import com.mingliu.infrastructure.dao.po.AiClientConfig;
 import com.mingliu.trigger.http.dto.BaseQueryRequest;
 import com.mingliu.trigger.http.dto.PageResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -44,6 +46,9 @@ public class AiAdminClientController {
 
     @Resource
     private IAiAgentFlowConfigDao aiAgentFlowConfigDao;
+
+    @Resource
+    private IAiClientConfigDao aiClientConfigDao;
     /**
      * 分页查询客户端列表
      *
@@ -113,11 +118,15 @@ public class AiAdminClientController {
             // 2. 获取所有关联的客户端ID
             List<String> clientIds = aiAgentFlowConfigs.stream()
                     .map(AiAgentFlowConfig::getClientId)
-                    .collect(Collectors.toList());
+                    .toList();
 
             // 3. 批量查询客户端信息
-            List<AiClient> clientList = aiAgentClientDao.selectBatchIds(clientIds);
-            return ResponseEntity.ok(clientList);
+            List<AiClient> resVo = new ArrayList<>();
+            for (String clientId:clientIds) {
+                AiClient client = aiAgentClientDao.selectOne(new LambdaQueryWrapper<AiClient>().eq(AiClient::getClientId, clientId));
+                resVo.add(client);
+            }
+            return ResponseEntity.ok(resVo);
         } catch (Exception e) {
             log.error("根据智能体ID查询客户端异常", e);
             return ResponseEntity.status(500).build();
@@ -175,6 +184,39 @@ public class AiAdminClientController {
             return ResponseEntity.ok(count > 0);
         } catch (Exception e) {
             log.error("删除客户端异常", e);
+            return ResponseEntity.status(500).build();
+        }
+    }
+
+    /**
+     * 动态条件分页查询客户端配置（AiClientConfig）
+     * 可按 sourceType、sourceId、targetType、targetId、状态、时间范围等进行筛选
+     */
+    @Operation(summary = "查询客户端配置列表", description = "按字段动态条件分页查询客户端配置（AiClientConfig）")
+    @GetMapping("queryClientConfigList")
+    public ResponseEntity<PageResponse<AiClientConfig>> queryClientConfigList(
+            @Parameter(description = "分页与通用查询条件") @RequestParam BaseQueryRequest request,
+            @Parameter(description = "源类型（model、client）") @RequestParam(value = "sourceType", required = false) String sourceType,
+            @Parameter(description = "源ID（如 chatModelId、chatClientId 等）") @RequestParam(value = "sourceId", required = false) String sourceId,
+            @Parameter(description = "目标类型（model、client）") @RequestParam(value = "targetType", required = false) String targetType,
+            @Parameter(description = "目标ID（如 openAiApiId、chatModelId、systemPromptId、advisorId 等）") @RequestParam(value = "targetId", required = false) String targetId
+    ) {
+        try {
+            Page<AiClientConfig> page = new Page<>(request.getPageNum(), request.getPageSize());
+            LambdaQueryWrapper<AiClientConfig> wrapper = new LambdaQueryWrapper<AiClientConfig>()
+                    .eq(sourceType != null && !sourceType.isEmpty(), AiClientConfig::getSourceType, sourceType)
+                    .eq(sourceId != null && !sourceId.isEmpty(), AiClientConfig::getSourceId, sourceId)
+                    .eq(targetType != null && !targetType.isEmpty(), AiClientConfig::getTargetType, targetType)
+                    .eq(targetId != null && !targetId.isEmpty(), AiClientConfig::getTargetId, targetId)
+                    .eq(request.getId() != null, AiClientConfig::getId, request.getId())
+                    .eq(request.getStatus() != null, AiClientConfig::getStatus, request.getStatus())
+                    .ge(request.getCreateTimeStart() != null, AiClientConfig::getCreateTime, request.getCreateTimeStart())
+                    .le(request.getCreateTimeEnd() != null, AiClientConfig::getCreateTime, request.getCreateTimeEnd());
+
+            IPage<AiClientConfig> configPage = aiClientConfigDao.selectPage(page, wrapper);
+            return ResponseEntity.ok(PageResponse.of(configPage));
+        } catch (Exception e) {
+            log.error("查询客户端配置列表异常", e);
             return ResponseEntity.status(500).build();
         }
     }

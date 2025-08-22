@@ -4,7 +4,9 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mingliu.infrastructure.dao.IAiClientApiDao;
+import com.mingliu.infrastructure.dao.IAiClientConfigDao;
 import com.mingliu.infrastructure.dao.po.AiClientApi;
+import com.mingliu.infrastructure.dao.po.AiClientConfig;
 import com.mingliu.trigger.http.dto.BaseQueryRequest;
 import com.mingliu.trigger.http.dto.PageResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -34,6 +36,7 @@ import java.util.List;
 public class AiAdminClientApiController {
     @Resource
     private IAiClientApiDao aiClientApiDao;
+
 
     /**
      * 分页查询API配置列表
