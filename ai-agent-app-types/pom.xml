@@ -7,7 +7,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>ai-agent-station-types</artifactId>
+    <artifactId>ai-agent-app-types</artifactId>
 
     <dependencies>
         <dependency>

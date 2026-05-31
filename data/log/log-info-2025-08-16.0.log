@@ -1,0 +1,1205 @@
+25-08-16.00:23:51.167 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.00:23:51.994 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.00:23:52.121 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.00:24:02.153 [SpringApplicationShutdownHook] WARN  HikariPool             - Timed-out waiting for close connection executor to shutdown
+25-08-16.00:24:02.154 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.00:24:16.227 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 16636 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.00:24:16.230 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.00:24:18.876 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.00:24:18.898 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.00:24:18.900 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.00:24:18.900 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.00:24:19.040 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.00:24:19.041 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2497 ms
+25-08-16.00:24:20.501 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.00:24:20.507 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.00:24:20.508 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.00:24:20.973 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.00:24:21.062 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'aiAdminModelController' method 
+com.mingliu.trigger.http.admin.AiAdminModelController#deleteClientModelConfig(Long)
+to {GET [/api/v1/ai/admin/client/model/config/deleteClientModelConfig]}: There is already 'aiAdminClientModelConfigController' bean method
+com.mingliu.trigger.http.admin.AiAdminClientModelConfigController#deleteClientModelConfig(Long) mapped.
+25-08-16.00:24:21.067 [main            ] INFO  StandardService        - Stopping service [Tomcat]
+25-08-16.00:24:21.084 [main            ] INFO  ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+25-08-16.00:24:21.111 [main            ] ERROR SpringApplication      - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'aiAdminModelController' method 
+com.mingliu.trigger.http.admin.AiAdminModelController#deleteClientModelConfig(Long)
+to {GET [/api/v1/ai/admin/client/model/config/deleteClientModelConfig]}: There is already 'aiAdminClientModelConfigController' bean method
+com.mingliu.trigger.http.admin.AiAdminClientModelConfigController#deleteClientModelConfig(Long) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.mingliu.Application.main(Application.java:18)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'aiAdminModelController' method 
+com.mingliu.trigger.http.admin.AiAdminModelController#deleteClientModelConfig(Long)
+to {GET [/api/v1/ai/admin/client/model/config/deleteClientModelConfig]}: There is already 'aiAdminClientModelConfigController' bean method
+com.mingliu.trigger.http.admin.AiAdminClientModelConfigController#deleteClientModelConfig(Long) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:676)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:637)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:509)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	... 18 common frames omitted
+25-08-16.00:26:55.669 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 36980 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.00:26:55.672 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.00:26:58.018 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.00:26:58.037 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.00:26:58.039 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.00:26:58.039 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.00:26:58.178 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.00:26:58.178 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2220 ms
+25-08-16.00:26:59.556 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.00:26:59.563 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.00:26:59.563 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.00:26:59.990 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.00:27:00.692 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.00:27:00.706 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.00:27:00.722 [main            ] INFO  Application            - Started Application in 5.811 seconds (process running for 6.783)
+25-08-16.00:27:00.725 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.00:27:00.725 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.00:27:37.771 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.00:27:37.771 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.00:27:37.774 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 3 ms
+25-08-16.00:27:40.590 [http-nio-8091-exec-2] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 963 ms
+25-08-16.00:36:01.659 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.00:36:02.134 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.00:36:10.625 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 4024 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.00:36:10.628 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.00:36:13.084 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.00:36:13.103 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.00:36:13.105 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.00:36:13.105 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.00:36:13.243 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.00:36:13.244 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2324 ms
+25-08-16.00:36:14.665 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.00:36:14.669 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.00:36:14.669 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.00:36:15.098 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.00:36:15.797 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.00:36:15.809 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.00:36:15.825 [main            ] INFO  Application            - Started Application in 6.024 seconds (process running for 7.05)
+25-08-16.00:36:15.828 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.00:36:15.828 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.00:36:25.257 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.00:36:25.257 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.00:36:25.259 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-08-16.00:36:27.593 [http-nio-8091-exec-8] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 740 ms
+25-08-16.00:37:49.305 [http-nio-8091-exec-4] ERROR AiAdminAgentTaskScheduleController - 查询AI代理任务调度列表异常
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.mingliu.infrastructure.dao.IAiAgentTaskScheduleDao.queryTaskScheduleList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.<init>(MybatisMapperMethod.java:50)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.lambda$cachedInvoker$0(MybatisMapperProxy.java:99)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.cachedInvoker(MybatisMapperProxy.java:97)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy100.queryTaskScheduleList(Unknown Source)
+	at com.mingliu.trigger.http.admin.AiAdminAgentTaskScheduleController.queryTaskScheduleList(AiAdminAgentTaskScheduleController.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-16.00:37:49.305 [http-nio-8091-exec-6] ERROR AiAdminAgentTaskScheduleController - 查询AI代理任务调度列表异常
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.mingliu.infrastructure.dao.IAiAgentTaskScheduleDao.queryTaskScheduleList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.<init>(MybatisMapperMethod.java:50)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.lambda$cachedInvoker$0(MybatisMapperProxy.java:99)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.cachedInvoker(MybatisMapperProxy.java:97)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy100.queryTaskScheduleList(Unknown Source)
+	at com.mingliu.trigger.http.admin.AiAdminAgentTaskScheduleController.queryTaskScheduleList(AiAdminAgentTaskScheduleController.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-16.00:37:54.954 [http-nio-8091-exec-8] ERROR AiAdminAgentTaskScheduleController - 查询AI代理任务调度列表异常
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.mingliu.infrastructure.dao.IAiAgentTaskScheduleDao.queryTaskScheduleList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.<init>(MybatisMapperMethod.java:50)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.lambda$cachedInvoker$0(MybatisMapperProxy.java:99)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.cachedInvoker(MybatisMapperProxy.java:97)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy100.queryTaskScheduleList(Unknown Source)
+	at com.mingliu.trigger.http.admin.AiAdminAgentTaskScheduleController.queryTaskScheduleList(AiAdminAgentTaskScheduleController.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-16.00:37:54.954 [http-nio-8091-exec-1] ERROR AiAdminAgentTaskScheduleController - 查询AI代理任务调度列表异常
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.mingliu.infrastructure.dao.IAiAgentTaskScheduleDao.queryTaskScheduleList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.<init>(MybatisMapperMethod.java:50)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.lambda$cachedInvoker$0(MybatisMapperProxy.java:99)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.cachedInvoker(MybatisMapperProxy.java:97)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy100.queryTaskScheduleList(Unknown Source)
+	at com.mingliu.trigger.http.admin.AiAdminAgentTaskScheduleController.queryTaskScheduleList(AiAdminAgentTaskScheduleController.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-16.00:39:03.046 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.00:39:03.560 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.00:41:59.072 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 29184 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.00:41:59.074 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.00:42:01.784 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.00:42:01.802 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.00:42:01.804 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.00:42:01.804 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.00:42:01.938 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.00:42:01.939 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2542 ms
+25-08-16.00:42:03.564 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.00:42:03.569 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.00:42:03.569 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.00:42:03.968 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.00:42:04.700 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.00:42:04.720 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.00:42:04.732 [main            ] INFO  Application            - Started Application in 6.471 seconds (process running for 7.56)
+25-08-16.00:42:04.737 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.00:42:04.737 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.00:42:18.150 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.00:42:18.150 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.00:42:18.152 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-08-16.00:42:20.772 [http-nio-8091-exec-7] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 984 ms
+25-08-16.00:42:28.761 [http-nio-8091-exec-10] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-16.00:42:29.637 [http-nio-8091-exec-10] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ccb3d3d
+25-08-16.00:42:29.639 [http-nio-8091-exec-10] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-16.00:51:02.871 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.00:51:03.643 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.00:51:03.653 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.00:51:03.899 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.00:51:12.673 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 26552 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.00:51:12.674 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.00:51:15.275 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.00:51:15.293 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.00:51:15.296 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.00:51:15.296 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.00:51:15.437 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.00:51:15.438 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2422 ms
+25-08-16.00:51:17.042 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.00:51:17.049 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.00:51:17.049 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.00:51:17.503 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.00:51:18.194 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.00:51:18.210 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.00:51:18.228 [main            ] INFO  Application            - Started Application in 6.305 seconds (process running for 7.368)
+25-08-16.00:51:18.231 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.00:51:18.231 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.00:51:37.624 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.00:51:37.625 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.00:51:37.626 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-08-16.00:51:40.558 [http-nio-8091-exec-7] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 1227 ms
+25-08-16.00:53:45.207 [http-nio-8091-exec-3] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-16.00:53:46.000 [http-nio-8091-exec-3] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e5606b1
+25-08-16.00:53:46.003 [http-nio-8091-exec-3] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-16.00:54:54.854 [http-nio-8091-exec-5] WARN  DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.mingliu.infrastructure.dao.po.AiClientAdvisor` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('{<EOL>  "id": 0,<EOL>  "advisorId": "",<EOL>  "advisorName": "",<EOL>  "advisorType": "",<EOL>  "orderNum": 0,<EOL>  "extParam": "",<EOL>  "status": 0,<EOL>  "createTime": "",<EOL>  "updateTime": "",<EOL> <EOL>}')]
+25-08-16.00:57:24.789 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.00:57:25.370 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.00:57:25.378 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.00:57:25.577 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.00:57:32.867 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 40384 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.00:57:32.869 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.00:57:35.110 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.00:57:35.129 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.00:57:35.132 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.00:57:35.132 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.00:57:35.259 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.00:57:35.259 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2098 ms
+25-08-16.00:57:36.687 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.00:57:36.693 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.00:57:36.693 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.00:57:37.096 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.00:57:37.795 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.00:57:37.806 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.00:57:37.820 [main            ] INFO  Application            - Started Application in 5.679 seconds (process running for 6.619)
+25-08-16.00:57:37.824 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.00:57:37.824 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.00:57:45.008 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.00:57:45.008 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.00:57:45.009 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-08-16.00:57:47.390 [http-nio-8091-exec-3] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 751 ms
+25-08-16.01:00:41.267 [http-nio-8091-exec-9] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-16.01:00:41.974 [http-nio-8091-exec-9] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@3fa2e036
+25-08-16.01:00:41.980 [http-nio-8091-exec-9] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-16.01:01:53.139 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.01:01:53.637 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.01:01:53.643 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.01:01:53.853 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.01:02:02.772 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 11720 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.01:02:02.775 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.01:02:05.595 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.01:02:05.637 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.01:02:05.639 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.01:02:05.640 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.01:02:05.818 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.01:02:05.818 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2742 ms
+25-08-16.01:02:07.301 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.01:02:07.307 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.01:02:07.307 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.01:02:07.683 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.01:02:08.352 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.01:02:08.364 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.01:02:08.377 [main            ] INFO  Application            - Started Application in 6.327 seconds (process running for 7.276)
+25-08-16.01:02:08.381 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.01:02:08.381 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.01:02:14.536 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.01:02:14.536 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.01:02:14.537 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-08-16.01:02:16.757 [http-nio-8091-exec-3] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 770 ms
+25-08-16.01:02:32.998 [http-nio-8091-exec-5] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-16.01:02:33.706 [http-nio-8091-exec-5] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@608fbc97
+25-08-16.01:02:33.709 [http-nio-8091-exec-5] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-16.01:16:36.852 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.01:16:37.478 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.01:16:37.484 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.01:16:47.488 [SpringApplicationShutdownHook] WARN  HikariPool             - Timed-out waiting for close connection executor to shutdown
+25-08-16.01:16:47.488 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.01:16:57.865 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 27872 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.01:16:57.866 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.01:17:00.528 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.01:17:00.547 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.01:17:00.550 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.01:17:00.550 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.01:17:00.701 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.01:17:00.701 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2513 ms
+25-08-16.01:17:02.208 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.01:17:02.215 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.01:17:02.215 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.01:17:02.659 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.01:17:03.405 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.01:17:03.417 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.01:17:03.431 [main            ] INFO  Application            - Started Application in 6.301 seconds (process running for 7.311)
+25-08-16.01:17:03.435 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.01:17:03.435 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.01:17:13.320 [http-nio-8091-exec-3] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.01:17:13.321 [http-nio-8091-exec-3] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.01:17:13.325 [http-nio-8091-exec-3] INFO  DispatcherServlet      - Completed initialization in 3 ms
+25-08-16.01:17:13.809 [http-nio-8091-exec-2] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-16.01:17:14.550 [http-nio-8091-exec-2] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@3907fbd6
+25-08-16.01:17:14.552 [http-nio-8091-exec-2] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-16.01:19:48.965 [http-nio-8091-exec-5] ERROR AiAdminAgentClientController - 新增AI智能体客户端关联异常
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'sequence' doesn't have a default value
+### The error may exist in com/mingliu/infrastructure/dao/IAiAgentFlowConfigDao.java (best guess)
+### The error may involve com.mingliu.infrastructure.dao.IAiAgentFlowConfigDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO ai_agent_flow_config  ( agent_id, client_id,     create_time )  VALUES (  ?, ?,     ?  )
+### Cause: java.sql.SQLException: Field 'sequence' doesn't have a default value
+; Field 'sequence' doesn't have a default value
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:258)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:93)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:347)
+	at jdk.proxy2/jdk.proxy2.$Proxy94.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:59)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy98.insert(Unknown Source)
+	at com.mingliu.trigger.http.admin.AiAdminAgentClientController.addAgentClient(AiAdminAgentClientController.java:126)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLException: Field 'sequence' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at jdk.internal.reflect.GeneratedMethodAccessor32.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy129.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy127.update(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:61)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:106)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy126.update(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy126.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333)
+	... 57 common frames omitted
+25-08-16.01:29:31.491 [http-nio-8091-exec-8] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1b2f5ba0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.01:29:31.491 [http-nio-8091-exec-3] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3907fbd6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.01:29:32.122 [http-nio-8091-exec-10] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2df30e5c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.01:29:41.513 [http-nio-8091-exec-8] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@25f67dad (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.01:29:41.513 [http-nio-8091-exec-3] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4e8337b2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.01:39:20.632 [http-nio-8091-exec-2] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1689fb95 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.01:40:27.929 [http-nio-8091-exec-3] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@446df46b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.02:00:57.491 [http-nio-8091-exec-4] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2ac1ab54 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.02:07:04.526 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.02:07:05.072 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.02:07:05.101 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.02:07:05.351 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.02:13:03.531 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 11336 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.02:13:03.534 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.02:13:08.220 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.02:13:08.246 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.02:13:08.249 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.02:13:08.249 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.02:13:08.401 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.02:13:08.401 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4518 ms
+25-08-16.02:13:10.078 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.02:13:10.085 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.02:13:10.085 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.02:13:10.581 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.02:13:11.327 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.02:13:11.342 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.02:13:11.358 [main            ] INFO  Application            - Started Application in 8.803 seconds (process running for 11.374)
+25-08-16.02:13:11.363 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.02:13:11.363 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.02:13:12.947 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.02:13:12.948 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.02:13:12.949 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-08-16.02:13:13.154 [http-nio-8091-exec-1] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-16.02:13:13.931 [http-nio-8091-exec-1] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@4034c96e
+25-08-16.02:13:13.933 [http-nio-8091-exec-1] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-16.02:13:20.231 [http-nio-8091-exec-6] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 821 ms
+25-08-16.02:39:28.995 [http-nio-8091-exec-5] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4034c96e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.02:39:28.995 [http-nio-8091-exec-7] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@23463480 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.02:39:29.002 [http-nio-8091-exec-7] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1db8dfd (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.02:39:29.003 [http-nio-8091-exec-5] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@58f538d0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.02:39:29.003 [http-nio-8091-exec-7] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@667485fe (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.02:39:29.005 [http-nio-8091-exec-5] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6bd5ac16 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.02:39:29.108 [MainHikariPool housekeeper] WARN  HikariPool             - MainHikariPool - Thread starvation or clock leap detected (housekeeper delta=18m14s937ms251µs300ns).
+25-08-16.03:11:00.312 [MainHikariPool housekeeper] WARN  HikariPool             - MainHikariPool - Thread starvation or clock leap detected (housekeeper delta=1m573ms402µs300ns).
+25-08-16.03:16:55.709 [MainHikariPool housekeeper] WARN  HikariPool             - MainHikariPool - Thread starvation or clock leap detected (housekeeper delta=1m25s307ms286µs500ns).
+25-08-16.03:17:27.723 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.03:17:28.218 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.03:17:28.257 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.03:17:28.267 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.03:17:39.731 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 29596 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.03:17:39.734 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.03:17:42.878 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.03:17:42.898 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.03:17:42.900 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.03:17:42.901 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.03:17:43.045 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.03:17:43.045 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2955 ms
+25-08-16.03:17:44.781 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.03:17:44.790 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.03:17:44.790 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.03:17:45.230 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.03:17:46.022 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.03:17:46.037 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.03:17:46.052 [main            ] INFO  Application            - Started Application in 7.194 seconds (process running for 8.286)
+25-08-16.03:17:46.056 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.03:17:46.056 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.03:18:27.287 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.03:18:27.288 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.03:18:27.289 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-08-16.03:18:30.057 [http-nio-8091-exec-3] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 988 ms
+25-08-16.03:22:52.296 [http-nio-8091-exec-7] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-16.03:22:53.139 [http-nio-8091-exec-7] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@7c295e94
+25-08-16.03:22:53.141 [http-nio-8091-exec-7] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-16.03:22:53.468 [http-nio-8091-exec-7] ERROR AiAdminClientApiController - 查询API配置列表异常
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: java.sql.SQLException: Incorrect DATETIME value: ''
+### The error may exist in com/mingliu/infrastructure/dao/IAiClientApiDao.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT COUNT(*) AS total FROM ai_client_api WHERE (id = ? AND status = ? AND create_time >= ? AND create_time <= ?)
+### Cause: java.sql.SQLException: Incorrect DATETIME value: ''
+; uncategorized SQLException; SQL state [HY000]; error code [1525]; Incorrect DATETIME value: ''
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:94)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:347)
+	at jdk.proxy2/jdk.proxy2.$Proxy94.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:194)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy103.selectList(Unknown Source)
+	at com.baomidou.mybatisplus.core.mapper.BaseMapper.selectPage(BaseMapper.java:458)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:732)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$DefaultMethodInvoker.invoke(MybatisMapperProxy.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy103.selectPage(Unknown Source)
+	at com.mingliu.trigger.http.admin.AiAdminClientApiController.queryClientApiList(AiAdminClientApiController.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLException: Incorrect DATETIME value: ''
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy136.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy134.query(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor.willDoQuery(PaginationInnerInterceptor.java:135)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:75)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy133.query(Unknown Source)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:169)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy133.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333)
+	... 63 common frames omitted
+25-08-16.03:23:41.398 [http-nio-8091-exec-4] ERROR AiAdminClientApiController - 查询API配置列表异常
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: java.sql.SQLException: Incorrect DATETIME value: ''
+### The error may exist in com/mingliu/infrastructure/dao/IAiClientApiDao.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT COUNT(*) AS total FROM ai_client_api WHERE (id = ? AND status = ? AND create_time >= ? AND create_time <= ?)
+### Cause: java.sql.SQLException: Incorrect DATETIME value: ''
+; uncategorized SQLException; SQL state [HY000]; error code [1525]; Incorrect DATETIME value: ''
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:94)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:347)
+	at jdk.proxy2/jdk.proxy2.$Proxy94.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:194)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy103.selectList(Unknown Source)
+	at com.baomidou.mybatisplus.core.mapper.BaseMapper.selectPage(BaseMapper.java:458)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:732)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$DefaultMethodInvoker.invoke(MybatisMapperProxy.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy103.selectPage(Unknown Source)
+	at com.mingliu.trigger.http.admin.AiAdminClientApiController.queryClientApiList(AiAdminClientApiController.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLException: Incorrect DATETIME value: ''
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy136.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy134.query(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor.willDoQuery(PaginationInnerInterceptor.java:135)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:75)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy133.query(Unknown Source)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:169)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy133.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333)
+	... 63 common frames omitted
+25-08-16.03:24:12.600 [http-nio-8091-exec-7] WARN  DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.mingliu.trigger.http.dto.BaseQueryRequest` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('{<EOL>  "pageNum": 1,<EOL>  "pageSize": 10,<EOL> <EOL>}')]
+25-08-16.03:25:40.623 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.03:25:41.272 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.03:25:41.282 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.03:25:41.469 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.03:25:50.099 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 30748 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.03:25:50.101 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.03:25:52.790 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.03:25:52.813 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.03:25:52.816 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.03:25:52.816 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.03:25:52.982 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.03:25:52.984 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2556 ms
+25-08-16.03:25:54.592 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.03:25:54.599 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.03:25:54.599 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.03:25:55.017 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.03:25:55.756 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.03:25:55.799 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.03:25:55.817 [main            ] INFO  Application            - Started Application in 6.528 seconds (process running for 7.705)
+25-08-16.03:25:55.822 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.03:25:55.822 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.03:25:56.122 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.03:25:56.122 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.03:25:56.122 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 0 ms
+25-08-16.03:25:56.505 [http-nio-8091-exec-1] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-16.03:25:57.075 [http-nio-8091-exec-1] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@57ff3340
+25-08-16.03:25:57.077 [http-nio-8091-exec-1] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-16.11:01:17.119 [MainHikariPool housekeeper] WARN  HikariPool             - MainHikariPool - Thread starvation or clock leap detected (housekeeper delta=7h27m53s267ms478µs800ns).
+25-08-16.11:08:19.086 [http-nio-8091-exec-10] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@793d6fb6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:08:19.089 [http-nio-8091-exec-10] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@50ef10ed (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:08:19.092 [http-nio-8091-exec-10] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1f4462a1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:08:19.093 [http-nio-8091-exec-10] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@d16fe20 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:08:19.094 [http-nio-8091-exec-10] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@198a40ac (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:21:19.671 [http-nio-8091-exec-9] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@d277eea (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:21:23.882 [http-nio-8091-exec-2] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5946f46 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:21:23.882 [http-nio-8091-exec-10] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4dc3d111 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:21:27.210 [http-nio-8091-exec-6] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@22a3c039 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:21:27.226 [http-nio-8091-exec-7] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@eaf4f78 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:28:36.332 [http-nio-8091-exec-5] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7132b568 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:28:36.332 [http-nio-8091-exec-9] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@25106b11 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:28:39.352 [http-nio-8091-exec-6] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6844128 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:43:25.239 [http-nio-8091-exec-2] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@52b299db (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:43:25.239 [http-nio-8091-exec-1] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@24ef3bea (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:43:25.240 [http-nio-8091-exec-7] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@13080e0f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:45:47.656 [http-nio-8091-exec-10] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3d924099 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.11:47:42.546 [http-nio-8091-exec-1] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@64a22fbb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:08:52.589 [http-nio-8091-exec-3] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5139000c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:08:52.589 [http-nio-8091-exec-10] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@d0b69ca (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:08:57.492 [http-nio-8091-exec-8] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@eb91acd (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:08:57.498 [http-nio-8091-exec-7] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@c8a8b1a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:08:57.498 [http-nio-8091-exec-5] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@f26aa66 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:13:40.406 [http-nio-8091-exec-5] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2b0cb2f5 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:13:40.406 [http-nio-8091-exec-10] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6f36e0ff (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:19:14.667 [http-nio-8091-exec-1] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6ccd5dc8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:24:05.376 [http-nio-8091-exec-7] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@39f117d6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:24:15.412 [http-nio-8091-exec-7] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2a11c9d3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:24:25.454 [http-nio-8091-exec-7] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@11ffea93 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:24:25.556 [http-nio-8091-exec-7] ERROR AiAdminRagOrderController - 查询RAG订单列表异常
+org.mybatis.spring.MyBatisSystemException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/mingliu/infrastructure/dao/IAiClientRagOrderDao.java (best guess)
+### The error may involve com.mingliu.infrastructure.dao.IAiClientRagOrderDao.selectList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:99)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:347)
+	at jdk.proxy2/jdk.proxy2.$Proxy94.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:194)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy108.selectList(Unknown Source)
+	at com.mingliu.trigger.http.admin.AiAdminRagOrderController.queryAllValidRagOrder(AiAdminRagOrderController.java:77)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/mingliu/infrastructure/dao/IAiClientRagOrderDao.java (best guess)
+### The error may involve com.mingliu.infrastructure.dao.IAiClientRagOrderDao.selectList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:156)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor64.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333)
+	... 58 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:77)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:64)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:348)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy126.query(Unknown Source)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:169)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy126.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	... 64 common frames omitted
+Caused by: java.sql.SQLTransientConnectionException: MainHikariPool - Connection is not available, request timed out after 30105ms (total=5, active=0, idle=5, waiting=0)
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:686)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:179)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:144)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:127)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	... 79 common frames omitted
+Caused by: java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:2488)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:562)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionDead(PoolBase.java:169)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:168)
+	... 84 common frames omitted
+Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations allowed after connection closed.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.NativeSession.checkClosed(NativeSession.java:762)
+	at com.mysql.cj.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:569)
+	at com.mysql.cj.jdbc.ConnectionImpl.setNetworkTimeout(ConnectionImpl.java:2484)
+	... 87 common frames omitted
+25-08-16.12:24:54.475 [http-nio-8091-exec-1] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@700e12e4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:24:54.481 [http-nio-8091-exec-6] WARN  PoolBase               - MainHikariPool - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3eaa195 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-08-16.12:42:31.409 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.12:42:31.887 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.12:42:31.921 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.12:42:32.162 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.12:43:02.488 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 8916 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.12:43:02.491 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.12:43:06.945 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.12:43:06.966 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.12:43:06.969 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.12:43:06.969 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.12:43:07.107 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.12:43:07.107 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4218 ms
+25-08-16.12:43:08.941 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.12:43:08.948 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.12:43:08.948 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.12:43:09.392 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.12:43:10.157 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.12:43:10.179 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.12:43:10.196 [main            ] INFO  Application            - Started Application in 8.708 seconds (process running for 11.702)
+25-08-16.12:43:10.200 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.12:43:10.200 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.12:43:17.314 [http-nio-8091-exec-2] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.12:43:17.314 [http-nio-8091-exec-2] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.12:43:17.317 [http-nio-8091-exec-2] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-08-16.12:43:17.704 [http-nio-8091-exec-1] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-16.12:43:18.440 [http-nio-8091-exec-1] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@3746b48a
+25-08-16.12:43:18.442 [http-nio-8091-exec-1] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-16.12:45:48.727 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.12:45:49.222 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.12:45:49.228 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.12:45:49.474 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.13:27:11.937 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 46520 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.13:27:11.939 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.13:27:15.393 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.13:27:15.412 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.13:27:15.415 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.13:27:15.415 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.13:27:15.568 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.13:27:15.568 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3291 ms
+25-08-16.13:27:17.378 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.13:27:17.385 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.13:27:17.385 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.13:27:17.845 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.13:27:18.578 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.13:27:18.590 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.13:27:18.604 [main            ] INFO  Application            - Started Application in 7.539 seconds (process running for 8.708)
+25-08-16.13:27:18.607 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.13:27:18.608 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.13:27:42.891 [http-nio-8091-exec-1] INFO  [/ai-agent-station]    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-08-16.13:27:42.891 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-08-16.13:27:42.894 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-08-16.13:27:45.778 [http-nio-8091-exec-6] INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 1051 ms
+25-08-16.13:28:01.439 [http-nio-8091-exec-5] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-16.13:28:02.282 [http-nio-8091-exec-5] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f08d387
+25-08-16.13:28:02.285 [http-nio-8091-exec-5] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-16.13:28:55.663 [http-nio-8091-exec-9] WARN  DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot coerce empty String ("") to `com.mingliu.trigger.http.dto.BaseQueryRequest` value (but could if coercion was enabled using `CoercionConfig`)]
+25-08-16.13:58:54.679 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.13:58:55.397 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.13:58:55.414 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-16.13:58:55.639 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-16.20:16:14.585 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 14356 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.20:16:14.588 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.20:16:17.167 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.20:16:17.191 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.20:16:17.192 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.20:16:17.193 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.20:16:17.331 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.20:16:17.331 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2393 ms
+25-08-16.20:16:19.036 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.20:16:19.043 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.20:16:19.044 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.20:16:19.525 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.20:16:20.288 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.20:16:20.303 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.20:16:20.321 [main            ] INFO  Application            - Started Application in 6.606 seconds (process running for 7.834)
+25-08-16.20:16:20.325 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.20:16:20.325 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.20:56:25.063 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.20:56:25.690 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+25-08-16.20:56:34.003 [main            ] INFO  Application            - Starting Application using Java 17.0.13 with PID 31964 (E:\workSpace\ai-agent-app\ai-agent-app-app\target\classes started by 19339 in E:\workSpace\ai-agent-app)
+25-08-16.20:56:34.007 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-08-16.20:56:36.535 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+25-08-16.20:56:36.568 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-08-16.20:56:36.571 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-08-16.20:56:36.572 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-08-16.20:56:36.711 [main            ] INFO  [/ai-agent-station]    - Initializing Spring embedded WebApplicationContext
+25-08-16.20:56:36.712 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2346 ms
+25-08-16.20:56:38.331 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-16.20:56:38.337 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-16.20:56:38.337 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-16.20:56:38.790 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-16.20:56:39.512 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-08-16.20:56:39.535 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/ai-agent-station'
+25-08-16.20:56:39.549 [main            ] INFO  Application            - Started Application in 6.41 seconds (process running for 7.493)
+25-08-16.20:56:39.553 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-16.20:56:39.553 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-16.21:34:25.651 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+25-08-16.21:34:26.118 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete

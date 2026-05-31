@@ -1,0 +1,3 @@
+25-08-15.21:19:17.076 [http-nio-8091-exec-10] WARN  DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Long is not present]
+25-08-15.21:36:56.957 [SpringApplicationShutdownHook] WARN  HikariPool             - Timed-out waiting for close connection executor to shutdown
+25-08-15.21:43:56.119 [SpringApplicationShutdownHook] WARN  HikariPool             - Timed-out waiting for close connection executor to shutdown

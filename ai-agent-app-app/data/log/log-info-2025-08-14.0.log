@@ -1,0 +1,1162 @@
+25-08-14.09:56:16.556 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 29072 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.09:56:16.558 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.09:56:23.090 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.09:56:23.103 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.09:56:23.103 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.09:56:23.969 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.09:56:25.197 [main            ] INFO  AgentTest              - Started AgentTest in 9.516 seconds (process running for 11.478)
+25-08-14.09:56:25.205 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.09:56:25.205 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.09:56:25.235 [main            ] WARN  TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener] to prepare test instance [com.mingliu.test.AgentTest@4fe7d9c9]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.mingliu.test.AgentTest': Unsatisfied dependency expressed through field 'imageResource': Failed to convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource'; Cannot convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:399)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:156)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:111)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.springframework.beans.ConversionNotSupportedException: Failed to convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource'; Cannot convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:84)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:71)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1581)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 31 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:273)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:80)
+	... 35 common frames omitted
+25-08-14.09:57:14.733 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 6084 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.09:57:14.736 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.09:57:19.131 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.09:57:19.143 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.09:57:19.143 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.09:57:19.902 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.09:57:20.870 [main            ] INFO  AgentTest              - Started AgentTest in 6.932 seconds (process running for 8.634)
+25-08-14.09:57:20.877 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.09:57:20.878 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.09:57:20.904 [main            ] WARN  TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener] to prepare test instance [com.mingliu.test.AgentTest@b8e49d1]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.mingliu.test.AgentTest': Unsatisfied dependency expressed through field 'imageResource': Failed to convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource'; Cannot convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:399)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:156)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:111)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.springframework.beans.ConversionNotSupportedException: Failed to convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource'; Cannot convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:84)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:71)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1581)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 31 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:273)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:80)
+	... 35 common frames omitted
+25-08-14.09:58:14.883 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 9048 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.09:58:14.885 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.09:58:19.850 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.09:58:19.861 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.09:58:19.861 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.09:58:20.927 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.09:58:22.437 [main            ] INFO  AgentTest              - Started AgentTest in 8.436 seconds (process running for 10.196)
+25-08-14.09:58:22.447 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.09:58:22.448 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.09:58:22.487 [main            ] WARN  TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener] to prepare test instance [com.mingliu.test.AgentTest@624a3e18]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.mingliu.test.AgentTest': Unsatisfied dependency expressed through field 'imageResource': Failed to convert value of type 'java.lang.String' to required type 'javax.annotation.Resource'; Cannot convert value of type 'java.lang.String' to required type 'javax.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:399)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:156)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:111)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.springframework.beans.ConversionNotSupportedException: Failed to convert value of type 'java.lang.String' to required type 'javax.annotation.Resource'; Cannot convert value of type 'java.lang.String' to required type 'javax.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:84)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:71)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1581)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 31 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'javax.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:273)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:80)
+	... 35 common frames omitted
+25-08-14.10:01:20.068 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 10900 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.10:01:20.071 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.10:01:28.009 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.10:01:28.022 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.10:01:28.022 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.10:01:29.111 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.10:01:30.622 [main            ] INFO  AgentTest              - Started AgentTest in 11.477 seconds (process running for 13.886)
+25-08-14.10:01:30.632 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.10:01:30.633 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.10:01:32.230 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3001]
+25-08-14.10:01:32.231 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3001]
+25-08-14.10:01:32.233 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3001]
+25-08-14.10:01:32.233 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3001]
+25-08-14.10:01:32.235 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3001]
+25-08-14.10:01:32.235 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3001]
+25-08-14.10:01:32.273 [pool-2-thread-2 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.10:01:33.209 [pool-2-thread-2 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@67a407e8
+25-08-14.10:01:33.211 [pool-2-thread-2 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.10:01:34.186 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:01:34.187 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:01:34.194 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.10:01:34.194 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:01:34.194 [main            ] WARN  AiClientToolMcpNode    - 没有需要被初始化的 ai client tool mcp
+25-08-14.10:01:34.195 [main            ] INFO  AiClientModelNode      - Ai Agent 构建节点，Mode 对话模型{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:01:34.201 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_model_2001
+25-08-14.10:01:34.201 [main            ] INFO  AiClientAdvisorNode    - Ai Agent 构建节点，Advisor 顾问角色{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:01:34.206 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_advisor_4001
+25-08-14.10:01:34.207 [main            ] INFO  AiClientNode           - Ai Agent 构建节点，客户端{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:01:34.221 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_3001
+25-08-14.10:01:34.222 [main            ] INFO  AgentTest              - 客户端构建：org.springframework.ai.chat.client.DefaultChatClient@d8a9238
+25-08-14.10:01:34.247 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.10:01:34.576 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.10:03:31.434 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 37060 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.10:03:31.436 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.10:03:36.550 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.10:03:36.567 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.10:03:36.567 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.10:03:37.624 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.10:03:39.051 [main            ] INFO  AgentTest              - Started AgentTest in 8.445 seconds (process running for 10.368)
+25-08-14.10:03:39.062 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.10:03:39.063 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.10:03:40.535 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3001]
+25-08-14.10:03:40.536 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3001]
+25-08-14.10:03:40.537 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3001]
+25-08-14.10:03:40.538 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3001]
+25-08-14.10:03:40.538 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3001]
+25-08-14.10:03:40.538 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3001]
+25-08-14.10:03:40.594 [ForkJoinPool.commonPool-worker-1] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.10:03:42.573 [ForkJoinPool.commonPool-worker-1] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@196cb52a
+25-08-14.10:03:42.575 [ForkJoinPool.commonPool-worker-1] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.10:03:43.626 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:03:43.627 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:03:43.633 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.10:03:43.633 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:03:43.634 [main            ] WARN  AiClientToolMcpNode    - 没有需要被初始化的 ai client tool mcp
+25-08-14.10:03:43.634 [main            ] INFO  AiClientModelNode      - Ai Agent 构建节点，Mode 对话模型{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:03:43.640 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_model_2001
+25-08-14.10:03:43.641 [main            ] INFO  AiClientAdvisorNode    - Ai Agent 构建节点，Advisor 顾问角色{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:03:43.646 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_advisor_4001
+25-08-14.10:03:43.646 [main            ] INFO  AiClientNode           - Ai Agent 构建节点，客户端{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:03:43.660 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_3001
+25-08-14.10:03:43.661 [main            ] INFO  AgentTest              - 客户端构建：org.springframework.ai.chat.client.DefaultChatClient@5686c878
+25-08-14.10:04:06.481 [main            ] INFO  AgentTest              - 测试结果(call):# Role: AI提示词优化专家
+
+## Profile
+
+- language: 中文
+- description: 专业AI提示词优化专家，擅长根据用户需求构建结构清晰、逻辑严谨的AI角色定义与工作流程，确保内容专业、完整且具备可执行性。
+- background: 拥有多年自然语言处理与AI交互设计经验，熟悉提示工程的最佳实践与优化策略，致力于提升AI响应的精准度与实用性。
+- personality: 逻辑性强、注重细节、追求完美，能够精准把握用户需求并转化为高效提示词结构。
+- expertise: 提示词工程、AI角色建模、流程设计、内容结构化表达
+- target_audience: AI开发者、产品经理、内容创作者、科研人员等需要优化提示词的用户群体
+
+## Skills
+
+1. 提示词结构化设计
+   - 需求分析：准确理解用户意图并转化为可执行任务
+   - 角色建模：构建具备专业背景与能力的角色形象
+   - 流程规划：设计高效、可复用的任务执行流程
+   - 内容优化：提升提示词的准确性与执行效率
+
+2. AI交互优化
+   - 上下文管理：合理利用记忆机制提升交互连贯性
+   - 输出控制：通过规则与限制确保输出质量
+   - 多模态处理：支持文本、图像等多种输入形式
+   - 用户适配：根据目标用户群调整表达风格与深度
+
+## Rules
+
+1. 基本原则：
+   - 精准性：必须准确理解并反映用户原始需求
+   - 完整性：确保角色定义、技能、规则、流程等模块齐全
+   - 结构清晰：采用标准化模板，便于理解和使用
+   - 可执行性：设计内容必须可被AI系统有效执行
+
+2. 行为准则：
+   - 不添加额外解释性内容
+   - 不使用引导词或过渡语
+   - 不使用代码块或特殊格式
+   - 保持专业术语的一致性
+
+3. 限制条件：
+   - 必须基于用户提供的模板结构进行扩展
+   - 不得偏离原始需求范围
+   - 不得引入外部系统或工具依赖
+   - 不得涉及敏感或受限领域内容
+
+## Workflows
+
+- 目标: 根据用户输入生成结构化、专业化的AI角色定义与执行流程
+- 步骤 1: 分析用户提供的原始提示词，提取核心要素
+- 步骤 2: 按照标准模板构建角色Profile与Skills模块
+- 步骤 3: 设计符合任务要求的Rules与Workflows
+- 预期结果: 输出一个结构完整、专业性强、可执行的AI角色定义
+
+## Initialization
+
+作为AI提示词优化专家，你必须遵守上述Rules，按照Workflows执行任务。
+25-08-14.10:04:06.500 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.10:04:06.969 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.10:04:34.095 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 30816 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.10:04:34.097 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.10:04:39.028 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.10:04:39.043 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.10:04:39.044 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.10:04:40.051 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.10:04:41.621 [main            ] INFO  AgentTest              - Started AgentTest in 8.321 seconds (process running for 9.842)
+25-08-14.10:04:41.631 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.10:04:41.632 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.10:04:42.855 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3001]
+25-08-14.10:04:42.856 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3001]
+25-08-14.10:04:42.857 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3001]
+25-08-14.10:04:42.857 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3001]
+25-08-14.10:04:42.857 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3001]
+25-08-14.10:04:42.859 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3001]
+25-08-14.10:04:42.901 [ForkJoinPool.commonPool-worker-1] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.10:04:44.292 [ForkJoinPool.commonPool-worker-1] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a890e0
+25-08-14.10:04:44.295 [ForkJoinPool.commonPool-worker-1] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.10:04:46.103 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:04:46.104 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:04:46.111 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.10:04:46.112 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:04:46.112 [main            ] WARN  AiClientToolMcpNode    - 没有需要被初始化的 ai client tool mcp
+25-08-14.10:04:46.112 [main            ] INFO  AiClientModelNode      - Ai Agent 构建节点，Mode 对话模型{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:04:46.118 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_model_2001
+25-08-14.10:04:46.118 [main            ] INFO  AiClientAdvisorNode    - Ai Agent 构建节点，Advisor 顾问角色{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:04:46.124 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_advisor_4001
+25-08-14.10:04:46.124 [main            ] INFO  AiClientNode           - Ai Agent 构建节点，客户端{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:04:46.139 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_3001
+25-08-14.10:04:46.140 [main            ] INFO  AgentTest              - 客户端构建：org.springframework.ai.chat.client.DefaultChatClient@385db729
+25-08-14.10:04:46.295 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.10:04:46.891 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.10:05:20.353 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 3140 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.10:05:20.355 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.10:05:25.383 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.10:05:25.400 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.10:05:25.401 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.10:05:26.403 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.10:05:27.813 [main            ] INFO  AgentTest              - Started AgentTest in 8.272 seconds (process running for 10.04)
+25-08-14.10:05:27.822 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.10:05:27.822 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.10:05:29.141 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3001]
+25-08-14.10:05:29.141 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3001]
+25-08-14.10:05:29.145 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3001]
+25-08-14.10:05:29.145 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3001]
+25-08-14.10:05:29.146 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3001]
+25-08-14.10:05:29.146 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3001]
+25-08-14.10:05:29.191 [pool-2-thread-3 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.10:05:29.949 [pool-2-thread-3 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d162aef
+25-08-14.10:05:29.951 [pool-2-thread-3 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.10:05:30.630 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:05:30.630 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:05:30.639 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.10:05:30.639 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:05:30.639 [main            ] WARN  AiClientToolMcpNode    - 没有需要被初始化的 ai client tool mcp
+25-08-14.10:05:30.639 [main            ] INFO  AiClientModelNode      - Ai Agent 构建节点，Mode 对话模型{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:05:30.646 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_model_2001
+25-08-14.10:05:30.646 [main            ] INFO  AiClientAdvisorNode    - Ai Agent 构建节点，Advisor 顾问角色{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:05:30.650 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_advisor_4001
+25-08-14.10:05:30.650 [main            ] INFO  AiClientNode           - Ai Agent 构建节点，客户端{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:05:30.662 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_3001
+25-08-14.10:05:30.663 [main            ] INFO  AgentTest              - 客户端构建：org.springframework.ai.chat.client.DefaultChatClient@5686c878
+25-08-14.10:05:47.272 [main            ] INFO  AgentTest              - 测试结果(call):# Role: AI视觉解析与物品识别专家
+
+## Profile
+
+- language: 中文
+- description: 专业分析图像内容并识别物品用途的AI专家，擅长从视觉元素中提取信息并进行逻辑推理
+- background: 拥有计算机视觉、图像识别和物品用途推理的专业知识，能够基于图像内容进行多维度分析
+- personality: 细致入微、逻辑清晰、推理严谨
+- expertise: 图像内容分析、物品识别、用途推理、场景理解
+- target_audience: 需要图像识别和物品用途分析的用户群体
+
+## Skills
+
+1. 图像分析技能
+   - 图像内容描述：准确描述图像中的主要元素和场景
+   - 物品识别：识别图像中的各种物品及其特征
+   - 用途推理：基于物品特征和场景推断可能用途
+   - 场景理解：理解图像整体场景及其上下文关系
+
+2. 逻辑推理技能
+   - 物品功能分析：分析物品的潜在功能和使用方式
+   - 使用场景推测：推断物品可能的使用场景
+   - 用户群体判断：判断物品的目标使用人群
+   - 使用方式说明：描述物品的典型使用方法
+
+## Rules
+
+1. 基本原则：
+   - 基于图像内容进行客观描述
+   - 使用专业术语但保持易懂
+   - 保持分析的逻辑性和系统性
+   - 严格区分事实描述和推测内容
+
+2. 行为准则：
+   - 先描述整体场景再分析具体物品
+   - 对不确定内容进行合理推测并明确标注
+   - 分析物品特征时要结合实际应用场景
+   - 提供全面且有深度的分析结果
+
+3. 限制条件：
+   - 不得编造图像中不存在的内容
+   - 不得进行无根据的推测
+   - 不得提供医疗/安全相关建议
+   - 不得处理违法不良信息
+
+## Workflows
+
+- 目标: 提供专业、准确的图像内容描述和物品用途分析
+- 步骤 1: 分析图像整体场景和主要元素
+- 步骤 2: 识别并描述图像中的各个物品及其特征
+- 步骤 3: 推理每个物品的可能用途及使用方式
+- 预期结果: 输出结构清晰、内容详实的分析报告
+
+## Initialization
+
+作为AI视觉解析与物品识别专家，你必须遵守上述Rules，按照Workflows执行任务。
+25-08-14.10:05:47.289 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.10:05:47.953 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.10:07:10.765 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 13676 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.10:07:10.767 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.10:07:15.548 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.10:07:15.561 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.10:07:15.562 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.10:07:16.568 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.10:07:18.050 [main            ] INFO  AgentTest              - Started AgentTest in 8.062 seconds (process running for 9.651)
+25-08-14.10:07:18.057 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.10:07:18.057 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.10:07:20.931 [main            ] WARN  SpringAiRetryAutoConfiguration - Retry error. Retry count:1
+org.springframework.ai.retry.NonTransientAiException: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","param":null,"code":"model_not_found"},"request_id":"bbdada49-dc6e-9c31-99ae-a88f690bb4e8"}
+	at org.springframework.ai.retry.autoconfigure.SpringAiRetryAutoConfiguration$2.handleError(SpringAiRetryAutoConfiguration.java:100)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:58)
+	at org.springframework.web.client.StatusHandler.lambda$fromErrorHandler$1(StatusHandler.java:71)
+	at org.springframework.web.client.StatusHandler.handle(StatusHandler.java:146)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.applyStatusHandlers(DefaultRestClient.java:826)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$readBody$4(DefaultRestClient.java:815)
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:215)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:814)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$toEntityInternal$2(DefaultRestClient.java:770)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:574)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:166)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:197)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:197)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:194)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:179)
+	at com.mingliu.test.AgentTest.testAiClientApiNode(AgentTest.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:76)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+25-08-14.10:08:04.053 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 33204 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.10:08:04.056 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.10:08:09.265 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.10:08:09.275 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.10:08:09.276 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.10:08:10.340 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.10:08:11.903 [main            ] INFO  AgentTest              - Started AgentTest in 8.701 seconds (process running for 10.525)
+25-08-14.10:08:11.909 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.10:08:11.910 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.10:08:16.983 [main            ] INFO  AgentTest              - 测试结果(images):{"metadata":{"empty":false,"id":"chatcmpl-73eef6af-9006-97ba-9c7b-11be1e38610c","model":"qwen-plus","rateLimit":{},"usage":{"promptTokens":27,"completionTokens":70,"totalTokens":97,"nativeUsage":{"completion_tokens":70,"prompt_tokens":27,"prompt_tokens_details":{"cached_tokens":0},"total_tokens":97}}},"result":{"metadata":{"contentFilters":[],"empty":true,"finishReason":"STOP"},"output":{"media":[],"messageType":"ASSISTANT","metadata":{"finishReason":"STOP","refusal":"","index":0,"role":"ASSISTANT","id":"chatcmpl-73eef6af-9006-97ba-9c7b-11be1e38610c","messageType":"ASSISTANT"},"text":"当然可以！不过目前我无法直接查看或分析图片。如果你能上传一张图片，我将能够描述其中的内容并推测图中物品的可能用途。你可以尝试上传图片，我会尽快为你提供详细的解读。\n\n如果你已经上传了图片，请确认图片是否成功发送，或者可以尝试重新上传。我期待为你提供帮助！","toolCalls":[]}},"results":[{"$ref":"$.metadata.rateLimit.usage.nativeUsage.prompt_tokens_details.result"}]}
+25-08-14.10:11:28.328 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 37276 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.10:11:28.330 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.10:11:32.744 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.10:11:32.755 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.10:11:32.756 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.10:11:33.929 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.10:11:35.332 [main            ] INFO  AgentTest              - Started AgentTest in 7.791 seconds (process running for 9.533)
+25-08-14.10:11:35.339 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.10:11:35.339 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.10:11:36.620 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3001]
+25-08-14.10:11:36.620 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3001]
+25-08-14.10:11:36.622 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3001]
+25-08-14.10:11:36.622 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3001]
+25-08-14.10:11:36.623 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3001]
+25-08-14.10:11:36.623 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3001]
+25-08-14.10:11:36.662 [pool-2-thread-3 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.10:12:08.645 [pool-2-thread-3 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6599a1ed
+25-08-14.10:12:08.647 [pool-2-thread-3 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.10:12:38.700 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.10:12:49.625 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.10:12:56.194 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 12132 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.10:12:56.196 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.10:13:00.839 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.10:13:00.850 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.10:13:00.851 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.10:13:01.887 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.10:13:03.390 [main            ] INFO  AgentTest              - Started AgentTest in 8.014 seconds (process running for 9.62)
+25-08-14.10:13:03.400 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.10:13:03.400 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.10:13:04.771 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3001]
+25-08-14.10:13:04.772 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3001]
+25-08-14.10:13:04.773 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3001]
+25-08-14.10:13:04.773 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3001]
+25-08-14.10:13:04.774 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3001]
+25-08-14.10:13:04.775 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3001]
+25-08-14.10:13:04.812 [pool-2-thread-4 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.10:13:05.813 [pool-2-thread-4 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a673b82
+25-08-14.10:13:05.815 [pool-2-thread-4 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.10:13:14.155 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:13:14.155 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:13:14.164 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.10:13:14.165 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:13:14.165 [main            ] WARN  AiClientToolMcpNode    - 没有需要被初始化的 ai client tool mcp
+25-08-14.10:13:14.165 [main            ] INFO  AiClientModelNode      - Ai Agent 构建节点，Mode 对话模型{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:13:14.174 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_model_2001
+25-08-14.10:13:14.174 [main            ] INFO  AiClientAdvisorNode    - Ai Agent 构建节点，Advisor 顾问角色{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:13:14.179 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_advisor_4001
+25-08-14.10:13:14.179 [main            ] INFO  AiClientNode           - Ai Agent 构建节点，客户端{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:13:14.190 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_3001
+25-08-14.10:13:14.191 [main            ] INFO  AgentTest              - 客户端构建：org.springframework.ai.chat.client.DefaultChatClient@611fe260
+25-08-14.10:13:17.846 [main            ] INFO  AgentTest              - 测试结果(call):你提供的任务描述中并未包含图片信息，因此我无法完成描述与分析。请提供具体的图片或相关信息，以便我更好地帮助你。
+25-08-14.10:13:17.869 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.10:13:43.249 [SpringApplicationShutdownHook] WARN  HikariPool             - Timed-out waiting for close connection executor to shutdown
+25-08-14.10:13:43.249 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.10:16:26.451 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 32960 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.10:16:26.455 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.10:16:31.527 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.10:16:31.541 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.10:16:31.542 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.10:16:32.871 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.10:16:34.696 [main            ] INFO  AgentTest              - Started AgentTest in 9.171 seconds (process running for 11.226)
+25-08-14.10:16:34.706 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.10:16:34.707 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.10:16:36.489 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3001]
+25-08-14.10:16:36.490 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3001]
+25-08-14.10:16:36.493 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3001]
+25-08-14.10:16:36.493 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3001]
+25-08-14.10:16:36.493 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3001]
+25-08-14.10:16:36.494 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3001]
+25-08-14.10:16:36.555 [pool-2-thread-1 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.10:16:37.512 [pool-2-thread-1 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@3393db55
+25-08-14.10:16:37.515 [pool-2-thread-1 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.10:16:38.243 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:16:38.244 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:16:38.255 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.10:16:38.256 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:16:38.256 [main            ] WARN  AiClientToolMcpNode    - 没有需要被初始化的 ai client tool mcp
+25-08-14.10:16:38.256 [main            ] INFO  AiClientModelNode      - Ai Agent 构建节点，Mode 对话模型{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:16:38.266 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_model_2001
+25-08-14.10:16:38.267 [main            ] INFO  AiClientAdvisorNode    - Ai Agent 构建节点，Advisor 顾问角色{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:16:38.274 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_advisor_4001
+25-08-14.10:16:38.274 [main            ] INFO  AiClientNode           - Ai Agent 构建节点，客户端{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:16:38.292 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_3001
+25-08-14.10:16:38.293 [main            ] INFO  AgentTest              - 客户端构建：org.springframework.ai.chat.client.DefaultChatClient@385db729
+25-08-14.10:16:38.337 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.10:16:38.696 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.10:17:25.188 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 22300 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.10:17:25.190 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.10:17:29.750 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.10:17:29.761 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.10:17:29.761 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.10:17:30.942 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.10:17:32.715 [main            ] INFO  AgentTest              - Started AgentTest in 8.326 seconds (process running for 10.211)
+25-08-14.10:17:32.734 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.10:17:32.737 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.10:17:34.518 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3001]
+25-08-14.10:17:34.519 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3001]
+25-08-14.10:17:34.520 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3001]
+25-08-14.10:17:34.521 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3001]
+25-08-14.10:17:34.523 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3001]
+25-08-14.10:17:34.524 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3001]
+25-08-14.10:17:34.576 [pool-2-thread-3 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.10:17:37.768 [pool-2-thread-3 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a026268
+25-08-14.10:17:37.770 [pool-2-thread-3 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.10:17:39.187 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:17:39.188 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:17:39.199 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.10:17:39.199 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:17:39.200 [main            ] WARN  AiClientToolMcpNode    - 没有需要被初始化的 ai client tool mcp
+25-08-14.10:17:39.200 [main            ] INFO  AiClientModelNode      - Ai Agent 构建节点，Mode 对话模型{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:17:39.212 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_model_2001
+25-08-14.10:17:39.213 [main            ] INFO  AiClientAdvisorNode    - Ai Agent 构建节点，Advisor 顾问角色{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:17:39.220 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_advisor_4001
+25-08-14.10:17:39.221 [main            ] INFO  AiClientNode           - Ai Agent 构建节点，客户端{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.10:17:39.245 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_3001
+25-08-14.10:17:39.246 [main            ] INFO  AgentTest              - 客户端构建：org.springframework.ai.chat.client.DefaultChatClient@385db729
+25-08-14.10:17:57.966 [main            ] INFO  AgentTest              - 测试结果(call):# Role: AI提示词优化专家
+
+## Profile
+
+- language: 中文
+- description: 专业提示词优化专家，擅长分析、重构和增强各类AI提示词，以提高生成内容的质量和适用性。
+- background: 拥有自然语言处理与人工智能领域的深厚知识，熟悉多领域应用场景，能够根据需求优化提示词结构与内容。
+- personality: 细致、逻辑性强，注重细节与实用性，能够根据用户需求精准调整提示词。
+- expertise: 提示词优化、内容生成、任务流程设计、AI交互逻辑优化。
+- target_audience: 需要提升AI交互效率与提示词质量的用户，包括开发者、内容创作者及AI应用设计者。
+
+## Skills
+
+1. 提示词分析与优化
+   - 结构优化：重组提示词结构以提升逻辑性和清晰度。
+   - 语义强化：增强提示词的语义表达能力，提高模型理解准确性。
+   - 领域适配：根据应用场景定制提示词内容，提升生成质量。
+   - 模式识别：识别用户意图并优化提示词以匹配最佳生成模式。
+2. 工作流设计与整合
+   - 流程拆解：将复杂任务分解为可执行步骤。
+   - 规则设定：制定清晰的行为准则与限制条件，确保输出可控。
+   - 系统集成：将提示词与外部系统（如CSDN、微信公众号）进行集成。
+   - 交互优化：提升用户与AI之间的交互效率与体验。
+
+## Rules
+
+1. 基本原则：
+   - 用户导向：始终围绕用户需求进行优化。
+   - 内容准确：确保生成内容与提示词意图高度一致。
+   - 结构清晰：提示词应具备良好的逻辑结构与可读性。
+   - 可执行性：确保提示词具备可操作性与实际应用价值。
+2. 行为准则：
+   - 保持中立：不引入主观偏见或无关信息。
+   - 语言规范：使用标准、专业、无歧义的语言。
+   - 迭代优化：根据反馈持续优化提示词。
+   - 安全合规：确保内容符合平台规范与法律要求。
+3. 限制条件：
+   - 不生成引导性或解释性内容。
+   - 不使用代码块或特殊格式。
+   - 不偏离原始提示词意图。
+   - 不添加未授权的外部链接或信息。
+
+## Workflows
+
+- 目标: 优化用户提供的提示词，生成专业、结构化、可执行的AI角色定义。
+- 步骤 1: 分析原始提示词内容与结构，识别关键要素。
+- 步骤 2: 按照标准化模板进行角色定义扩展与优化。
+- 步骤 3: 确保输出内容专业、完整、符合用户需求。
+- 预期结果: 输出结构清晰、内容完整的AI角色定义文档，便于后续部署与执行。
+
+## Initialization
+
+作为AI提示词优化专家，你必须遵守上述Rules，按照Workflows执行任务。
+25-08-14.10:17:57.994 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.10:17:58.730 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.17:29:23.334 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 30656 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.17:29:23.337 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.17:29:30.542 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.17:29:30.554 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.17:29:30.554 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.17:29:31.579 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.17:29:32.854 [main            ] INFO  AgentTest              - Started AgentTest in 10.429 seconds (process running for 12.598)
+25-08-14.17:29:32.860 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.17:29:32.860 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.17:29:32.890 [main            ] WARN  TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener] to prepare test instance [com.mingliu.test.AgentTest@5f997b40]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.mingliu.test.AgentTest': Unsatisfied dependency expressed through field 'imageResource': Failed to convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource'; Cannot convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:399)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:156)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:111)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.springframework.beans.ConversionNotSupportedException: Failed to convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource'; Cannot convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:84)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:71)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1581)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 31 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'jakarta.annotation.Resource': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:273)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:80)
+	... 35 common frames omitted
+25-08-14.17:30:15.850 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 13696 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.17:30:15.853 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.17:30:20.648 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.17:30:20.659 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.17:30:20.659 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.17:30:21.711 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.17:30:22.908 [main            ] INFO  AgentTest              - Started AgentTest in 7.961 seconds (process running for 9.713)
+25-08-14.17:30:22.916 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.17:30:22.916 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.17:30:24.587 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3001]
+25-08-14.17:30:24.587 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3001]
+25-08-14.17:30:24.589 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3001]
+25-08-14.17:30:24.590 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3001]
+25-08-14.17:30:24.590 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3001]
+25-08-14.17:30:24.591 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3001]
+25-08-14.17:30:24.636 [pool-2-thread-4 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.17:30:25.347 [pool-2-thread-4 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@703e4f82
+25-08-14.17:30:25.349 [pool-2-thread-4 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.17:30:25.907 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.17:30:25.907 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.17:30:25.914 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.17:30:25.915 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.17:30:25.915 [main            ] WARN  AiClientToolMcpNode    - 没有需要被初始化的 ai client tool mcp
+25-08-14.17:30:25.915 [main            ] INFO  AiClientModelNode      - Ai Agent 构建节点，Mode 对话模型{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.17:30:25.923 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_model_2001
+25-08-14.17:30:25.923 [main            ] INFO  AiClientAdvisorNode    - Ai Agent 构建节点，Advisor 顾问角色{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.17:30:25.929 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_advisor_4001
+25-08-14.17:30:25.929 [main            ] INFO  AiClientNode           - Ai Agent 构建节点，客户端{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.17:30:25.944 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_3001
+25-08-14.17:30:25.945 [main            ] INFO  AgentTest              - 客户端构建：org.springframework.ai.chat.client.DefaultChatClient@d8a9238
+25-08-14.17:30:25.965 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.17:30:26.057 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.17:43:21.637 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 34956 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.17:43:21.639 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.17:43:26.195 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.17:43:26.204 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.17:43:26.204 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.17:43:27.066 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.17:43:28.396 [main            ] INFO  AgentTest              - Started AgentTest in 7.516 seconds (process running for 9.176)
+25-08-14.17:43:28.404 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.17:43:28.404 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.17:43:29.947 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.17:43:29.947 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.17:43:29.949 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.17:43:29.949 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.17:43:29.950 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.17:43:29.950 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.17:43:29.993 [pool-2-thread-4 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.17:43:30.653 [pool-2-thread-4 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@72287c23
+25-08-14.17:43:30.655 [pool-2-thread-4 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.17:43:31.239 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.17:43:31.239 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.17:43:31.247 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.17:43:31.248 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.17:43:31.715 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - Error sending message: 404
+25-08-14.18:43:31.539 [HttpClient-12-Worker-0] ERROR HttpClientSseClientTransport - SSE connection error
+java.io.IOException: chunked transfer encoding, state: READING_LENGTH
+	at java.net.http/jdk.internal.net.http.common.Utils.wrapWithExtraDetail(Utils.java:351)
+	at java.net.http/jdk.internal.net.http.Http1Response$BodyReader.onReadError(Http1Response.java:760)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.checkForErrors(Http1AsyncReceiver.java:302)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.flush(Http1AsyncReceiver.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.EOFException: EOF reached while reading
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onComplete(Http1AsyncReceiver.java:596)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadSubscription.signalCompletion(SocketTube.java:640)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:845)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:774)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:957)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:984)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:939)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:939)
+25-08-14.18:43:31.640 [ForkJoinPool.commonPool-worker-2] ERROR HttpClientSseClientTransport - SSE connection error
+java.util.concurrent.CompletionException: java.io.IOException: chunked transfer encoding, state: READING_LENGTH
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:874)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at java.net.http/jdk.internal.net.http.ResponseSubscribers.lambda$getBodyAsync$2(ResponseSubscribers.java:1155)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at java.net.http/jdk.internal.net.http.LineSubscriberAdapter$LineSubscription.loop(LineSubscriberAdapter.java:410)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.LineSubscriberAdapter$LineSubscription.signalError(LineSubscriberAdapter.java:199)
+	at java.net.http/jdk.internal.net.http.LineSubscriberAdapter.onError(LineSubscriberAdapter.java:105)
+	at java.net.http/jdk.internal.net.http.Http1Response$Http1BodySubscriber.propagateError(Http1Response.java:327)
+	at java.net.http/jdk.internal.net.http.Http1Response$Http1BodySubscriber.complete(Http1Response.java:356)
+	at java.net.http/jdk.internal.net.http.Http1Response$Http1BodySubscriber.onError(Http1Response.java:386)
+	at java.net.http/jdk.internal.net.http.Http1Response.lambda$readBody$2(Http1Response.java:468)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at java.net.http/jdk.internal.net.http.Http1Response.onReadError(Http1Response.java:554)
+	at java.net.http/jdk.internal.net.http.Http1Response$BodyReader.onReadError(Http1Response.java:761)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.checkForErrors(Http1AsyncReceiver.java:302)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.flush(Http1AsyncReceiver.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: chunked transfer encoding, state: READING_LENGTH
+	at java.net.http/jdk.internal.net.http.common.Utils.wrapWithExtraDetail(Utils.java:351)
+	at java.net.http/jdk.internal.net.http.Http1Response$BodyReader.onReadError(Http1Response.java:760)
+	... 8 common frames omitted
+Caused by: java.io.EOFException: EOF reached while reading
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onComplete(Http1AsyncReceiver.java:596)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadSubscription.signalCompletion(SocketTube.java:640)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:845)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:774)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:957)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:984)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:939)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:939)
+25-08-14.21:14:02.495 [MainHikariPool housekeeper] WARN  HikariPool             - MainHikariPool - Thread starvation or clock leap detected (housekeeper delta=2h8m30s447ms706µs900ns).
+25-08-14.21:15:43.976 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:15:44.139 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.21:15:50.090 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 40164 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:15:50.094 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:15:55.453 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:15:55.464 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:15:55.464 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:15:56.592 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:15:58.286 [main            ] INFO  AgentTest              - Started AgentTest in 9.077 seconds (process running for 11.13)
+25-08-14.21:15:58.298 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:15:58.298 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:15:59.680 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:15:59.682 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:15:59.683 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:15:59.684 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:15:59.684 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:15:59.684 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:15:59.719 [pool-2-thread-4 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:16:00.433 [pool-2-thread-4 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@267363f8
+25-08-14.21:16:00.435 [pool-2-thread-4 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:16:01.064 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:16:01.065 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:16:01.073 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.21:16:01.075 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:16:01.518 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - Error sending message: 404
+25-08-14.21:17:33.253 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:17:33.425 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.21:17:38.076 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 34752 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:17:38.080 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:17:42.602 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:17:42.616 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:17:42.617 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:17:43.672 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:17:45.087 [main            ] INFO  AgentTest              - Started AgentTest in 7.771 seconds (process running for 9.452)
+25-08-14.21:17:45.095 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:17:45.095 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:17:46.462 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:17:46.463 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:17:46.464 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:17:46.464 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:17:46.465 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:17:46.465 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:17:46.502 [pool-2-thread-5 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:17:47.144 [pool-2-thread-5 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f4289f7
+25-08-14.21:17:47.146 [pool-2-thread-5 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:17:47.755 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:17:47.755 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:17:47.763 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.21:17:47.763 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:17:48.142 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - Error sending message: 404
+25-08-14.21:19:51.816 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 43948 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:19:51.819 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:19:56.249 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:19:56.260 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:19:56.260 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:19:57.151 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:19:58.317 [main            ] INFO  AgentTest              - Started AgentTest in 7.271 seconds (process running for 8.893)
+25-08-14.21:19:58.324 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:19:58.324 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:19:59.778 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:19:59.779 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:19:59.780 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:19:59.780 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:19:59.780 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:19:59.782 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:19:59.824 [pool-2-thread-3 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:20:00.607 [pool-2-thread-3 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@17cf7236
+25-08-14.21:20:00.609 [pool-2-thread-3 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:20:01.195 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:20:01.195 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:20:01.203 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.21:20:01.204 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:20:01.580 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - Error sending message: 404
+25-08-14.21:21:15.526 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:21:15.685 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.21:21:24.168 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 10036 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:21:24.170 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:21:29.085 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:21:29.097 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:21:29.098 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:21:30.114 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:21:31.578 [main            ] INFO  AgentTest              - Started AgentTest in 8.205 seconds (process running for 10.01)
+25-08-14.21:21:31.586 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:21:31.587 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:21:32.921 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:21:32.921 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:21:32.923 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:21:32.923 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:21:32.924 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:21:32.924 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:21:32.964 [pool-2-thread-1 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:21:33.641 [pool-2-thread-1 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@2fa3d5c9
+25-08-14.21:21:33.643 [pool-2-thread-1 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:21:34.315 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:21:34.316 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:21:34.323 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.21:21:34.323 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:21:34.711 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - Error sending message: 404
+25-08-14.21:24:07.558 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:24:07.725 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.21:24:16.293 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 35384 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:24:16.294 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:24:20.953 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:24:20.975 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:24:20.975 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:24:22.127 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:24:23.610 [main            ] INFO  AgentTest              - Started AgentTest in 8.066 seconds (process running for 9.661)
+25-08-14.21:24:23.617 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:24:23.618 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:24:25.480 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - Error sending message: 404
+25-08-14.21:28:03.660 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:28:13.664 [SpringApplicationShutdownHook] WARN  HikariPool             - Timed-out waiting for close connection executor to shutdown
+25-08-14.21:28:13.664 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.21:28:22.122 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 27584 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:28:22.127 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:28:26.744 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:28:26.756 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:28:26.757 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:28:27.736 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:28:29.170 [main            ] INFO  AgentTest              - Started AgentTest in 7.828 seconds (process running for 9.379)
+25-08-14.21:28:29.177 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:28:29.177 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:28:30.598 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:28:30.598 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:28:30.599 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:28:30.599 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:28:30.601 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:28:30.601 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:28:30.646 [pool-2-thread-2 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:28:31.266 [pool-2-thread-2 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@56bdaf21
+25-08-14.21:28:31.269 [pool-2-thread-2 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:28:31.869 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:28:31.870 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:28:31.878 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.21:28:31.878 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:28:32.280 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - Error sending message: 404
+25-08-14.21:32:03.576 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:32:03.734 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.21:32:26.725 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 45808 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:32:26.729 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:32:31.314 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:32:31.326 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:32:31.326 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:32:32.233 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:32:33.604 [main            ] INFO  AgentTest              - Started AgentTest in 7.66 seconds (process running for 9.272)
+25-08-14.21:32:33.614 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:32:33.614 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:32:34.963 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:32:34.963 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:32:34.964 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:32:34.964 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:32:34.965 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:32:34.965 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:32:35.005 [ForkJoinPool.commonPool-worker-1] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:32:35.625 [ForkJoinPool.commonPool-worker-1] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@3be1b44e
+25-08-14.21:32:35.628 [ForkJoinPool.commonPool-worker-1] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:32:36.242 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:32:36.242 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:32:36.250 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.21:32:36.250 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:32:36.667 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - Error sending message: 404
+25-08-14.21:34:56.270 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:36:48.310 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 37696 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:36:48.313 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:36:53.092 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:36:53.103 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:36:53.103 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:36:54.188 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:36:55.714 [main            ] INFO  AgentTest              - Started AgentTest in 8.205 seconds (process running for 9.828)
+25-08-14.21:36:55.720 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:36:55.722 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:36:57.244 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:36:57.244 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:36:57.245 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:36:57.246 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:36:57.248 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:36:57.248 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:36:57.295 [pool-2-thread-1 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:36:58.001 [pool-2-thread-1 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@4978c983
+25-08-14.21:36:58.003 [pool-2-thread-1 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:36:58.602 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:36:58.602 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:36:58.610 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.21:36:58.610 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:36:58.826 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - SSE connection error
+java.util.concurrent.CompletionException: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:722)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at io.modelcontextprotocol.client.transport.FlowSseClient.lambda$subscribe$2(FlowSseClient.java:202)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	... 9 common frames omitted
+25-08-14.21:36:58.837 [ForkJoinPool.commonPool-worker-1] ERROR Operators              - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+Caused by: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at io.modelcontextprotocol.client.transport.FlowSseClient.lambda$subscribe$2(FlowSseClient.java:202)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+25-08-14.21:37:08.757 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:37:08.918 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.21:39:02.647 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 42200 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:39:02.652 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:39:07.742 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:39:07.757 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:39:07.758 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:39:08.818 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:39:10.602 [main            ] INFO  AgentTest              - Started AgentTest in 8.856 seconds (process running for 10.629)
+25-08-14.21:39:10.611 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:39:10.611 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:39:12.255 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:39:12.257 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:39:12.259 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:39:12.259 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:39:12.260 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:39:12.260 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:39:12.303 [pool-2-thread-5 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:39:12.955 [pool-2-thread-5 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@173cf616
+25-08-14.21:39:12.957 [pool-2-thread-5 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:39:13.568 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:39:13.569 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:39:13.577 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.21:39:13.578 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:39:23.715 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:39:23.874 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.21:40:55.655 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 44424 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:40:55.657 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:41:02.591 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:41:02.608 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:41:02.608 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:41:04.049 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:41:06.209 [main            ] INFO  AgentTest              - Started AgentTest in 11.446 seconds (process running for 14.229)
+25-08-14.21:41:06.223 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:41:06.224 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:41:08.415 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:41:08.417 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:41:08.420 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:41:08.421 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:41:08.422 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:41:30.990 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:41:33.322 [pool-2-thread-2 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:41:34.324 [pool-2-thread-2 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d48fbb6
+25-08-14.21:41:34.328 [pool-2-thread-2 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:42:08.545 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:42:17.461 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.21:43:56.587 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 38212 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:43:56.590 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:44:00.988 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:44:00.998 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:44:00.998 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:44:01.876 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:44:03.013 [main            ] INFO  AgentTest              - Started AgentTest in 7.222 seconds (process running for 8.961)
+25-08-14.21:44:03.018 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:44:03.018 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:44:04.409 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:44:04.409 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:44:04.412 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:44:04.412 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:44:04.412 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:44:04.413 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:44:04.457 [pool-2-thread-1 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:44:05.161 [pool-2-thread-1 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@414e7830
+25-08-14.21:44:05.163 [pool-2-thread-1 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:44:05.760 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:44:05.760 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:44:05.768 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.21:44:05.768 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:44:06.251 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - Error sending message: 404
+25-08-14.21:50:36.225 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.21:50:46.228 [SpringApplicationShutdownHook] WARN  HikariPool             - Timed-out waiting for close connection executor to shutdown
+25-08-14.21:50:46.228 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+25-08-14.21:50:54.581 [main            ] INFO  AgentTest              - Starting AgentTest using Java 17.0.13 with PID 46232 (started by 19339 in E:\workSpace\ai-agent-app\ai-agent-app-app)
+25-08-14.21:50:54.583 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+25-08-14.21:50:59.277 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-08-14.21:50:59.287 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-08-14.21:50:59.288 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-08-14.21:51:00.126 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+25-08-14.21:51:01.394 [main            ] INFO  AgentTest              - Started AgentTest in 7.618 seconds (process running for 9.269)
+25-08-14.21:51:01.400 [main            ] INFO  Application            - 预热AiAgent服务，开始
+25-08-14.21:51:01.400 [main            ] INFO  Application            - 预热AiAgent服务，完成
+25-08-14.21:51:02.923 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3101]
+25-08-14.21:51:02.923 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3101]
+25-08-14.21:51:02.924 [ForkJoinPool.commonPool-worker-1] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3101]
+25-08-14.21:51:02.925 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3101]
+25-08-14.21:51:02.925 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3101]
+25-08-14.21:51:02.926 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3101]
+25-08-14.21:51:02.968 [ForkJoinPool.commonPool-worker-1] INFO  HikariDataSource       - MainHikariPool - Starting...
+25-08-14.21:51:03.650 [ForkJoinPool.commonPool-worker-1] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f640e2a
+25-08-14.21:51:03.652 [ForkJoinPool.commonPool-worker-1] INFO  HikariDataSource       - MainHikariPool - Start completed.
+25-08-14.21:51:04.239 [main            ] INFO  RootNode               - Ai Agent 构建，数据加载节点{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:51:04.239 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:51:04.249 [main            ] INFO  AbstractArmorySupport  - 成功注册Bean: ai_client_api_1001
+25-08-14.21:51:04.249 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建节点，Tool MCP 工具配置{"commandIdList":["3101"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+25-08-14.21:51:04.250 [main            ] INFO  AiClientToolMcpNode    - http://appbuilder.baidu.com/v2/ai_search/mcp/
+25-08-14.21:51:04.250 [main            ] INFO  AiClientToolMcpNode    - sse?api_key=Bearer+bce-v3/ALTAK-JIu2dvdMXs03ndtiR5rCf/79d75ceb505278e8d074b3a34eddfd88e9029ad8
+25-08-14.21:51:04.632 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - Error sending message: 404
+25-08-14.22:42:16.001 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+25-08-14.22:42:26.009 [SpringApplicationShutdownHook] WARN  HikariPool             - Timed-out waiting for close connection executor to shutdown
+25-08-14.22:42:26.009 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.

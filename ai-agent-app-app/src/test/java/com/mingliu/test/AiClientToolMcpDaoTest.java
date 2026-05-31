@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Title: AiClientToolMcpDaoTest
@@ -25,6 +27,7 @@ public class AiClientToolMcpDaoTest {
 
     @Test
     public void test_insert() {
+
         AiClientToolMcp aiClientToolMcp = AiClientToolMcp.builder().
                  id(10L)
                 .mcpName("测试MCP工具")

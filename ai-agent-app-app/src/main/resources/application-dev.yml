@@ -13,12 +13,29 @@ thread:
         keep-alive-time: 5000
         block-queue-size: 5000
         policy: CallerRunsPolicy
+# Swagger配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.mingliu.trigger.http
 
+# knife4j配置
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
 # 数据库配置；启动时配置数据库资源信息
 spring:
   datasource:
     username: root
-    password: Vae20000608!
+    password: 123456
     url: jdbc:mysql://106.54.0.156:13306/ai-agent-station?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
@@ -32,15 +49,6 @@ spring:
 #  main:
 #    allow-bean-definition-overriding: true
   ai:
-#    mcp:
-#        client:
-#          request-timeout: 180
-#          sse:
-#            connections:
-#              server1:
-#                url: http://localhost:8101
-#              server2:
-#                url: http://localhost:8102
 
     #        stdio:
     #          servers-configuration: classpath:/mcp-servers-config-2.json
@@ -51,7 +59,7 @@ spring:
           driver-class-name: org.postgresql.Driver
           username: postgres
           password: postgres
-          url: jdbc:postgresql://106.54.0.156:13306/ai-rag-knowledge
+          url: jdbc:postgresql://106.54.0.156:15432/ai-rag-knowledge
           type: com.zaxxer.hikari.HikariDataSource
           hikari:
             maximum-pool-size: 5
@@ -60,10 +68,25 @@ spring:
             connection-timeout: 30000
     openai:
       base-url: https://dashscope.aliyuncs.com/compatible-mode
-      api-key: sk-93a0daaeb8e54475bc997b5ff37e331a
-mybatis:
-  mapper-locations: classpath:/mybatis/mapper/*.xml
-  config-location:  classpath:/mybatis/config/mybatis-config.xml
+      api-key: sk-981c80b24bbd465c9a1724c12b41410e
+      chat:
+        options:
+          model: qwen-plus
+      embedding-model: text-embedding-v4
+      embedding:
+        options:
+          num-batch: 1536
+# MyBatis Plus配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
 
 # 日志
 logging:

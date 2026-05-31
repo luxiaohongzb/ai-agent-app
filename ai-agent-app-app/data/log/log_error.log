@@ -1,0 +1,265 @@
+25-08-22.10:36:21.934 [HttpClient-12-Worker-3] WARN  McpClientSession       - Unexpected response for unknown id e0d403aa-0
+25-08-22.10:36:22.145 [HttpClient-13-Worker-1] WARN  McpClientSession       - Unexpected response for unknown id fbf4b68c-0
+25-08-22.10:41:02.779 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 2544ae39-0
+25-08-22.10:41:03.015 [HttpClient-13-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id ecad6999-0
+25-08-22.10:41:05.001 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
+	at reactor.core.publisher.FluxSubscribeOnValue$ScheduledScalar.run(FluxSubscribeOnValue.java:181)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.10:50:35.998 [HttpClient-12-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id 014c9113-0
+25-08-22.10:50:36.214 [HttpClient-13-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 9e53743e-0
+25-08-22.10:53:08.548 [MainHikariPool housekeeper] WARN  HikariPool             - MainHikariPool - Thread starvation or clock leap detected (housekeeper delta=2m37s492ms633µs100ns).
+25-08-22.10:54:44.427 [PgVectorHikariPool housekeeper] WARN  HikariPool             - PgVectorHikariPool - Thread starvation or clock leap detected (housekeeper delta=52s15ms167µs900ns).
+25-08-22.10:54:44.427 [MainHikariPool housekeeper] WARN  HikariPool             - MainHikariPool - Thread starvation or clock leap detected (housekeeper delta=57s455ms431µs600ns).
+25-08-22.10:55:55.719 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.MonoMapFuseable] :
+	reactor.core.publisher.Mono.map(Mono.java:3490)
+	org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.doNextWithProtectFromBlockingBefore(AbstractChatMemoryAdvisor.java:196)
+Error has been observed at the following site(s):
+	*____________Mono.map ⇢ at org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.doNextWithProtectFromBlockingBefore(AbstractChatMemoryAdvisor.java:196)
+	|_   Mono.flatMapMany ⇢ at org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.doNextWithProtectFromBlockingBefore(AbstractChatMemoryAdvisor.java:197)
+	|_           Flux.map ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregateAdvisedResponse(MessageAggregator.java:56)
+	|_ Flux.doOnSubscribe ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregate(MessageAggregator.java:94)
+	|_      Flux.doOnNext ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregate(MessageAggregator.java:105)
+	|_  Flux.doOnComplete ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregate(MessageAggregator.java:144)
+Original Stack Trace:
+		at org.springframework.util.Assert.notNull(Assert.java:181)
+		at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+		at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+		at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+		at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:113)
+		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:252)
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.10:56:53.362 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 38aeecaf-0
+25-08-22.10:56:53.611 [HttpClient-13-Worker-1] WARN  McpClientSession       - Unexpected response for unknown id 113a36c1-0
+25-08-22.10:56:55.384 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
+	at reactor.core.publisher.FluxSubscribeOnValue$ScheduledScalar.run(FluxSubscribeOnValue.java:181)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.10:59:37.543 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id d504d9e6-0
+25-08-22.10:59:37.753 [HttpClient-13-Worker-1] WARN  McpClientSession       - Unexpected response for unknown id 75a89c73-0
+25-08-22.11:00:42.189 [HttpClient-12-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id 12b077b7-0
+25-08-22.11:00:42.396 [HttpClient-13-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id 36b64868-0
+25-08-22.11:59:32.598 [HttpClient-12-Worker-3] WARN  McpClientSession       - Unexpected response for unknown id 0be9438a-0
+25-08-22.11:59:32.799 [HttpClient-13-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id 327bad7e-0
+25-08-22.12:00:29.958 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 2781a10f-0
+25-08-22.12:00:30.180 [HttpClient-13-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id 6523a67c-0
+25-08-22.12:00:32.495 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
+	at reactor.core.publisher.FluxSubscribeOnValue$ScheduledScalar.run(FluxSubscribeOnValue.java:181)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.12:05:01.693 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 5eb032c3-0
+25-08-22.12:05:01.930 [HttpClient-13-Worker-1] WARN  McpClientSession       - Unexpected response for unknown id 99cf8fbb-0
+25-08-22.12:05:04.015 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
+	at reactor.core.publisher.FluxSubscribeOnValue$ScheduledScalar.run(FluxSubscribeOnValue.java:181)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.12:08:32.282 [HttpClient-12-Worker-3] WARN  McpClientSession       - Unexpected response for unknown id bc65f6f2-0
+25-08-22.12:08:32.487 [HttpClient-13-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id 98b152fa-0
+25-08-22.12:08:34.695 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
+	at reactor.core.publisher.FluxSubscribeOnValue$ScheduledScalar.run(FluxSubscribeOnValue.java:181)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.12:23:03.724 [HttpClient-12-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id 20b38fa4-0
+25-08-22.12:23:03.936 [HttpClient-13-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id ac080d85-0
+25-08-22.12:23:06.807 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
+	at reactor.core.publisher.FluxSubscribeOnValue$ScheduledScalar.run(FluxSubscribeOnValue.java:181)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.12:27:46.996 [HttpClient-12-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id aab4638a-0
+25-08-22.12:27:47.209 [HttpClient-13-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id bb0da89c-0
+25-08-22.12:30:17.592 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id abdc268a-0
+25-08-22.12:30:17.832 [HttpClient-13-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id 4f656cf0-0
+25-08-22.12:30:43.259 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 6581736b-0
+25-08-22.12:30:43.512 [HttpClient-13-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 05f4d45a-0
+25-08-22.12:31:19.732 [HttpClient-12-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id b897cd67-0
+25-08-22.12:31:19.945 [HttpClient-13-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id b135f2d0-0
+25-08-22.12:32:10.120 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.MonoMapFuseable] :
+	reactor.core.publisher.Mono.map(Mono.java:3490)
+	org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.doNextWithProtectFromBlockingBefore(AbstractChatMemoryAdvisor.java:196)
+Error has been observed at the following site(s):
+	*____________Mono.map ⇢ at org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.doNextWithProtectFromBlockingBefore(AbstractChatMemoryAdvisor.java:196)
+	|_   Mono.flatMapMany ⇢ at org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.doNextWithProtectFromBlockingBefore(AbstractChatMemoryAdvisor.java:197)
+	|_           Flux.map ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregateAdvisedResponse(MessageAggregator.java:56)
+	|_ Flux.doOnSubscribe ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregate(MessageAggregator.java:94)
+	|_      Flux.doOnNext ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregate(MessageAggregator.java:105)
+	|_  Flux.doOnComplete ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregate(MessageAggregator.java:144)
+Original Stack Trace:
+		at org.springframework.util.Assert.notNull(Assert.java:181)
+		at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+		at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+		at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+		at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:113)
+		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:252)
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.12:32:49.407 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 997397b5-0
+25-08-22.12:32:49.616 [HttpClient-13-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 0b81eb9d-0
+25-08-22.12:33:39.078 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.MonoMapFuseable] :
+	reactor.core.publisher.Mono.map(Mono.java:3490)
+	org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.doNextWithProtectFromBlockingBefore(AbstractChatMemoryAdvisor.java:196)
+Error has been observed at the following site(s):
+	*____________Mono.map ⇢ at org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.doNextWithProtectFromBlockingBefore(AbstractChatMemoryAdvisor.java:196)
+	|_   Mono.flatMapMany ⇢ at org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.doNextWithProtectFromBlockingBefore(AbstractChatMemoryAdvisor.java:197)
+	|_           Flux.map ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregateAdvisedResponse(MessageAggregator.java:56)
+	|_ Flux.doOnSubscribe ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregate(MessageAggregator.java:94)
+	|_      Flux.doOnNext ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregate(MessageAggregator.java:105)
+	|_  Flux.doOnComplete ⇢ at org.springframework.ai.chat.model.MessageAggregator.aggregate(MessageAggregator.java:144)
+Original Stack Trace:
+		at org.springframework.util.Assert.notNull(Assert.java:181)
+		at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+		at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+		at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+		at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:113)
+		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:252)
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.12:35:28.455 [PgVectorHikariPool housekeeper] WARN  HikariPool             - PgVectorHikariPool - Thread starvation or clock leap detected (housekeeper delta=1m58s850ms935µs).
+25-08-22.12:35:28.455 [MainHikariPool housekeeper] WARN  HikariPool             - MainHikariPool - Thread starvation or clock leap detected (housekeeper delta=1m42s134ms33µs400ns).
+25-08-22.12:36:16.249 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 44dc19a8-0
+25-08-22.12:36:16.447 [HttpClient-13-Worker-2] WARN  McpClientSession       - Unexpected response for unknown id 21f52603-0
+25-08-22.12:36:19.242 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
+	at reactor.core.publisher.FluxSubscribeOnValue$ScheduledScalar.run(FluxSubscribeOnValue.java:181)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.12:37:29.562 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 1059e396-0
+25-08-22.12:37:29.769 [HttpClient-13-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 74c04ead-0
+25-08-22.12:37:31.928 [boundedElastic-1] ERROR MessageAggregator      - Aggregation Error
+java.lang.IllegalArgumentException: Content must not be null for SYSTEM or USER messages
+	at org.springframework.util.Assert.notNull(Assert.java:181)
+	at org.springframework.ai.chat.messages.AbstractMessage.<init>(AbstractMessage.java:71)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:85)
+	at org.springframework.ai.chat.messages.UserMessage.<init>(UserMessage.java:56)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.before(PromptChatMemoryAdvisor.java:133)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
+	at reactor.core.publisher.FluxSubscribeOnValue$ScheduledScalar.run(FluxSubscribeOnValue.java:181)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25-08-22.12:38:03.977 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id e1970d40-0
+25-08-22.12:38:04.198 [HttpClient-13-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id a381a30e-0
+25-08-22.12:41:15.849 [HttpClient-12-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 1b5f0e00-0
+25-08-22.12:41:16.068 [HttpClient-13-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 725ca89f-0
+25-08-22.12:43:38.749 [HttpClient-12-Worker-3] WARN  McpClientSession       - Unexpected response for unknown id 9bbe79fd-0
+25-08-22.12:43:39.034 [HttpClient-13-Worker-0] WARN  McpClientSession       - Unexpected response for unknown id 05902f26-0
