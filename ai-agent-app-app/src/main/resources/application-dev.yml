@@ -35,7 +35,7 @@ knife4j:
 spring:
   datasource:
     username: root
-    password: Vae20000608!
+    password: 123456
     url: jdbc:mysql://106.54.0.156:13306/ai-agent-station?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
@@ -68,7 +68,7 @@ spring:
             connection-timeout: 30000
     openai:
       base-url: https://dashscope.aliyuncs.com/compatible-mode
-      api-key: sk-93a0daaeb8e54475bc997b5ff37e331a
+      api-key: sk-981c80b24bbd465c9a1724c12b41410e
       chat:
         options:
           model: qwen-plus
