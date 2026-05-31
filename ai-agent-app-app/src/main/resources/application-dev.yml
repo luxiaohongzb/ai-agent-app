@@ -67,8 +67,8 @@ spring:
             idle-timeout: 30000
             connection-timeout: 30000
     openai:
-      base-url: https://dashscope.aliyuncs.com/compatible-mode
-      api-key: sk-981c80b24bbd465c9a1724c12b41410e
+      base-url:
+      api-key:
       chat:
         options:
           model: qwen-plus
